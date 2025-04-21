@@ -1,8 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://cfmcelubuiv0b"]
+[gd_scene load_steps=43 format=3 uid="uid://cfmcelubuiv0b"]
 
 [ext_resource type="Script" uid="uid://btilyn5fdcwv6" path="res://scenes/sprites/player.gd" id="1_amofw"]
 [ext_resource type="Texture2D" uid="uid://msj6lg4aqf5e" path="res://assets/character/standard/walk.png" id="1_ig3ou"]
 [ext_resource type="Texture2D" uid="uid://b2pu68j748boi" path="res://assets/character/standard/thrust.png" id="2_mjkdo"]
+[ext_resource type="AudioStream" uid="uid://3ca3x3mb1rnx" path="res://assets/sounds/soundEffects/walking.mp3" id="4_oaouy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjkdo"]
 atlas = ExtResource("1_ig3ou")
@@ -299,3 +300,8 @@ frame_progress = 0.719908
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 16.25)
 shape = SubResource("RectangleShape2D_amofw")
+
+[node name="footstepSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_oaouy")
+volume_db = -5.0
+bus = &"SFX"

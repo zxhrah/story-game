@@ -13,17 +13,15 @@ func _process(delta: float) -> void:
 
 func _on_save_pressed():
 	var vbox = $AudioOptions/VBoxContainer
-	var save_button = $AudioOptions/Save  # Corrected path since Save is a sibling to VBoxContainer
+	var save_button = $AudioOptions/Save
 
-	# Toggle visibility of VBoxContainer
-	vbox.visible = !vbox.visible
-
-	# Change the button text depending on visibility
+	# Toggle visibility and update text accordingly
 	if vbox.visible:
-		save_button.text = "Save"
-	else:
-		save_button.text = "Saved"
-
-	# Optional: Save volume when hiding the menu
-	if not vbox.visible:
+		vbox.visible = false
+		save_button.text = "⚙️"
+		# Apply the volume setting when hiding
 		AudioServer.set_bus_volume_db(1, linear_to_db($AudioOptions/VBoxContainer/music.value))
+	else:
+		vbox.visible = true
+		save_button.text = "Save"
+		

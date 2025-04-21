@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://brvyvpi3ib3lm"]
+[gd_scene load_steps=15 format=3 uid="uid://brvyvpi3ib3lm"]
 
 [ext_resource type="Texture2D" uid="uid://bj126lredc2an" path="res://assets/backgrounds/galleryImage.png" id="1_lg6hf"]
 [ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="2_6rhrw"]
 [ext_resource type="Script" uid="uid://catxxo878j7na" path="res://scenes/scene_controller.gd" id="3_8naax"]
+[ext_resource type="AudioStream" uid="uid://3ca3x3mb1rnx" path="res://assets/sounds/soundEffects/walking.mp3" id="3_r0fv4"]
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="4_543d2"]
 [ext_resource type="FontFile" uid="uid://bipivipms5d56" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_mdy1u"]
 [ext_resource type="AudioStream" uid="uid://b8bhb6sycm6o2" path="res://assets/sounds/backgroundMusic/sunset-cafe-jazz-238475.mp3" id="6_dsqju"]
@@ -108,6 +109,11 @@ offset_bottom = 347.0
 position = Vector2(-65, 487)
 scale = Vector2(2.66129, 2.66129)
 script = null
+
+[node name="footstepSFX2" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("3_r0fv4")
+volume_db = -5.0
+bus = &"SFX"
 
 [node name="SceneController" type="Node" parent="."]
 script = ExtResource("3_8naax")

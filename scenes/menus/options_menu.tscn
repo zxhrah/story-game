@@ -39,6 +39,7 @@ grow_vertical = 2
 script = ExtResource("2_ohqpn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,6 +56,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="AudioOptions/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.158469, 0.202593, 0.44769, 1)
 theme_override_constants/line_spacing = -25
 theme_override_fonts/font = ExtResource("3_ohqpn")
 theme_override_font_sizes/font_size = 32
@@ -84,8 +86,7 @@ offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_ohqpn")
-text = "Save
-"
+text = "⚙️"
 
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/music" to="AudioOptions" method="_on_h_slider_mouse_exited"]
 [connection signal="pressed" from="AudioOptions/Save" to="." method="_on_save_pressed"]

@@ -44,9 +44,12 @@ func _on_art_button_pressed() -> void:
 
 		# Get the player's AnimatedSprite to play the walking animation
 		var animated_sprite = player.get_node("AnimatedSprite2D")
+		var footsteps = player.get_node("footstepSFX2")
 		if animated_sprite:
 			print("AnimatedSprite found, playing walking_right animation")
 			animated_sprite.play("walking_right")
+			if footsteps:
+				footsteps.play()
 		else:
 			print("Error: AnimatedSprite not found!")
 
@@ -59,10 +62,12 @@ func _on_art_button_pressed() -> void:
 func _on_player_arrived():
 	# Stop the walking animation and switch to idle
 	var animated_sprite = player.get_node("AnimatedSprite2D")  # Assuming AnimatedSprite is a child of player
-	
+	var footsteps = player.get_node("footstepSFX2")
 	if animated_sprite:
 		print("Player arrived, playing idle animation")
 		animated_sprite.play("idle")  # Play idle animation
+		if footsteps:
+			footsteps.stop()
 	else:
 		print("Error: AnimatedSprite not found when arriving!")
 
