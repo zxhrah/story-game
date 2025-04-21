@@ -74,7 +74,7 @@ func _on_player_arrived():
 	choices.visible = true
 
 func _on_choice_1_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
+	SceneTransition.change_scene("res://scenes/main_game.tscn")
 
 
 func _on_choice_2_pressed():
