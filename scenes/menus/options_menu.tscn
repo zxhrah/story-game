@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4b5fx6d3uvol"]
+
+[ext_resource type="Script" uid="uid://do2c5r7nkhsny" path="res://scenes/menus/options_menu.gd" id="1_60mby"]
+[ext_resource type="Script" uid="uid://eebxmgt2ea2e" path="res://scenes/menus/audio_options.gd" id="2_ohqpn"]
+[ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="3_ohqpn"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ohqpn"]
+thickness = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3aff8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rumi"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 762.0
+offset_top = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60mby")
+
+[node name="AudioOptions" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -113.0
+offset_right = -316.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ohqpn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 132.5
+offset_top = 138.0
+offset_right = 411.5
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/line_spacing = -25
+theme_override_fonts/font = ExtResource("3_ohqpn")
+theme_override_font_sizes/font_size = 32
+text = "Music
+"
+
+[node name="music" type="HSlider" parent="AudioOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_ohqpn")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3aff8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_7rumi")
+max_value = 1.0
+step = 0.001
+
+[node name="Save" type="Button" parent="AudioOptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 436.5
+offset_top = 164.0
+offset_right = 480.5
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ohqpn")
+text = "Save
+"
+
+[connection signal="mouse_exited" from="AudioOptions/VBoxContainer/music" to="AudioOptions" method="_on_h_slider_mouse_exited"]
+[connection signal="pressed" from="AudioOptions/Save" to="." method="_on_save_pressed"]

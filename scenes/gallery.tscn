@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://brvyvpi3ib3lm"]
+[gd_scene load_steps=14 format=3 uid="uid://brvyvpi3ib3lm"]
 
 [ext_resource type="Texture2D" uid="uid://bj126lredc2an" path="res://assets/backgrounds/galleryImage.png" id="1_lg6hf"]
 [ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="2_6rhrw"]
 [ext_resource type="Script" uid="uid://catxxo878j7na" path="res://scenes/scene_controller.gd" id="3_8naax"]
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="4_543d2"]
 [ext_resource type="FontFile" uid="uid://bipivipms5d56" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_mdy1u"]
+[ext_resource type="AudioStream" uid="uid://b8bhb6sycm6o2" path="res://assets/sounds/backgroundMusic/sunset-cafe-jazz-238475.mp3" id="6_dsqju"]
+[ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="7_mkcid"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_543d2"]
 bg_color = Color(1, 1, 1, 1)
@@ -161,6 +163,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_mdy1u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dsqju")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mkcid")
 text = "I think i'll stay..."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dsqju")
+volume_db = -11.277
+autoplay = true
+bus = &"ambient"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("7_mkcid")]
+layout_mode = 1
 
 [connection signal="pressed" from="artButton" to="SceneController" method="_on_art_button_pressed"]
 [connection signal="pressed" from="UI/Choices/Choice1" to="SceneController" method="_on_choice_1_pressed"]

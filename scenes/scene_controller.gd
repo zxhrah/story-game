@@ -74,8 +74,8 @@ func _on_player_arrived():
 	choices.visible = true
 
 func _on_choice_1_pressed():
-	SceneTransition.change_scene("res://scenes/main_game.tscn")
-
+	SceneTransition.change_scene("res://scenes/main_game.tscn", $AmbientPlayer)
+	var ambient_player = $AmbientPlayer
 
 func _on_choice_2_pressed():
 	# Hide buttons
