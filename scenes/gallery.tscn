@@ -1,0 +1,167 @@
+[gd_scene load_steps=12 format=3 uid="uid://brvyvpi3ib3lm"]
+
+[ext_resource type="Texture2D" uid="uid://bj126lredc2an" path="res://assets/backgrounds/galleryImage.png" id="1_lg6hf"]
+[ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="2_6rhrw"]
+[ext_resource type="Script" uid="uid://catxxo878j7na" path="res://scenes/scene_controller.gd" id="3_8naax"]
+[ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="4_543d2"]
+[ext_resource type="FontFile" uid="uid://bipivipms5d56" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_mdy1u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_543d2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_543d2"]
+font = ExtResource("4_mdy1u")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8naax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdy1u"]
+draw_center = false
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsqju"]
+bg_color = Color(0.735969, 0.273693, 2.88785e-07, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkcid"]
+bg_color = Color(0.735969, 0.273693, 2.88785e-07, 1)
+draw_center = false
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Gallery" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 905.0
+offset_bottom = 509.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("1_lg6hf")
+
+[node name="artButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 106.0
+offset_right = 784.0
+offset_bottom = 347.0
+
+[node name="player" parent="." instance=ExtResource("2_6rhrw")]
+position = Vector2(-65, 487)
+scale = Vector2(2.66129, 2.66129)
+script = null
+
+[node name="SceneController" type="Node" parent="."]
+script = ExtResource("3_8naax")
+
+[node name="UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 373.0
+offset_right = 362.0
+offset_bottom = 396.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_543d2")
+label_settings = SubResource("LabelSettings_543d2")
+
+[node name="Choices" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 450.0
+offset_right = 746.0
+offset_bottom = 490.0
+theme_override_constants/separation = 30
+
+[node name="Choice1" type="Button" parent="UI/Choices"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(2.64719e-07, 0.319035, 0.168904, 1)
+theme_override_colors/font_color = Color(0, 0.317647, 0.168627, 1)
+theme_override_colors/font_focus_color = Color(0, 0.317647, 0.168627, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.317647, 0.168627, 1)
+theme_override_fonts/font = ExtResource("4_543d2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8naax")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mdy1u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dsqju")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mkcid")
+text = "Let's go!"
+
+[node name="Choice2" type="Button" parent="UI/Choices"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(2.64719e-07, 0.319035, 0.168904, 1)
+theme_override_colors/font_color = Color(0, 0.317647, 0.168627, 1)
+theme_override_colors/font_focus_color = Color(0, 0.317647, 0.168627, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.317647, 0.168627, 1)
+theme_override_fonts/font = ExtResource("4_543d2")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8naax")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mdy1u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dsqju")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mkcid")
+text = "I think i'll stay..."
+
+[connection signal="pressed" from="artButton" to="SceneController" method="_on_art_button_pressed"]
+[connection signal="pressed" from="UI/Choices/Choice1" to="SceneController" method="_on_choice_1_pressed"]
+[connection signal="pressed" from="UI/Choices/Choice2" to="SceneController" method="_on_choice_2_pressed"]
