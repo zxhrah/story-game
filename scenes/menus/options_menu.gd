@@ -21,6 +21,7 @@ func _on_save_pressed():
 		save_button.text = "⚙️"
 		# Apply the volume setting when hiding
 		AudioServer.set_bus_volume_db(1, linear_to_db($AudioOptions/VBoxContainer/music.value))
+		AudioServer.set_bus_volume_db(2, linear_to_db($AudioOptions/VBoxContainer/sfxslider.value))
 	else:
 		vbox.visible = true
 		save_button.text = "Save"

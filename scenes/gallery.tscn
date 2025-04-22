@@ -174,7 +174,7 @@ text = "I think i'll stay..."
 stream = ExtResource("6_dsqju")
 volume_db = -11.277
 autoplay = true
-bus = &"ambient"
+bus = &"Music"
 
 [node name="OptionsMenu" parent="." instance=ExtResource("7_mkcid")]
 layout_mode = 1
