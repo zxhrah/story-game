@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkya73l0upn3m"]
+
+[ext_resource type="Texture2D" uid="uid://bgfoq8v5kgbgo" path="res://assets/backgrounds/sky.png" id="1_ccscm"]
+[ext_resource type="Texture2D" uid="uid://tmpm1c162ma8" path="res://assets/flooring/water_floor.png" id="2_ccscm"]
+[ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="3_qo03w"]
+[ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="3_yun4j"]
+[ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="4_is556"]
+[ext_resource type="PackedScene" uid="uid://byeai7rtiqq3p" path="res://scenes/extras/cloud.tscn" id="5_ul8a6"]
+
+[node name="scene2" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+offset_top = -14.0
+offset_right = 1669.0
+offset_bottom = 684.0
+size_flags_horizontal = 6
+texture = ExtResource("1_ccscm")
+
+[node name="floor" type="TextureRect" parent="."]
+offset_left = -5.0
+offset_top = 363.0
+offset_right = 5223.0
+offset_bottom = 1723.0
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_ccscm")
+
+[node name="player" parent="." instance=ExtResource("3_yun4j")]
+y_sort_enabled = true
+position = Vector2(74, 496)
+scale = Vector2(1.46494, 1.46494)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+scale = Vector2(1.00877, 0.869533)
+offset = Vector2(0, -105)
+limit_left = 0
+limit_right = 1650
+
+[node name="Label" type="Label" parent="."]
+offset_left = 564.0
+offset_top = 318.0
+offset_right = 1112.0
+offset_bottom = 553.0
+theme_override_constants/line_spacing = 30
+theme_override_fonts/font = ExtResource("3_qo03w")
+theme_override_font_sizes/font_size = 24
+text = "The story begins in Moulvibazar, Bangladesh.
+The village experiences a heavy downpour, more than usual,
+that turned familiar dirt paths into streams of water.
+
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("4_is556")]
+offset_left = 392.0
+offset_top = 206.0
+offset_right = 392.0
+offset_bottom = 206.0
+
+[node name="Cloud" parent="." instance=ExtResource("5_ul8a6")]
