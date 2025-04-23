@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Story Game"
-run/main_scene="uid://js38lnfx1ooa"
+run/main_scene="uid://brvyvpi3ib3lm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 Player="*res://scenes/sprites/player.tscn"
 SceneTransition="*res://scenes/transitions/scene_transition.tscn"
 TransitionHandler="*res://scenes/transitions/transitionHandler.gd"
-SceneData="*res://scenes/global/SceneData.gd"
 
 [rendering]
 
