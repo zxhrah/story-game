@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Player="*res://scenes/sprites/player.tscn"
 SceneTransition="*res://scenes/transitions/scene_transition.tscn"
+TransitionHandler="*res://scenes/transitions/transitionHandler.gd"
+SceneData="*res://scenes/global/SceneData.gd"
 
 [rendering]
 
