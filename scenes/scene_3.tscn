@@ -1,3 +1,93 @@
-[gd_scene format=3 uid="uid://bvaux3plg0ps0"]
+[gd_scene load_steps=10 format=3 uid="uid://bvaux3plg0ps0"]
+
+[ext_resource type="Script" uid="uid://bvy34o5oqpxx" path="res://scenes/scene_3.gd" id="1_r2pi8"]
+[ext_resource type="Texture2D" uid="uid://c1la71nsmg328" path="res://assets/objects/blurred_trees.png" id="2_087sr"]
+[ext_resource type="Texture2D" uid="uid://bgfoq8v5kgbgo" path="res://assets/backgrounds/sky.png" id="2_lmrsu"]
+[ext_resource type="Texture2D" uid="uid://bvch6k2gux6bm" path="res://assets/flooring/wet_floor.png" id="3_r2pi8"]
+[ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="4_63cu2"]
+[ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="5_gmcgl"]
+[ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="6_5uf0h"]
+[ext_resource type="PackedScene" uid="uid://byeai7rtiqq3p" path="res://scenes/extras/cloud.tscn" id="7_gm7q5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rqdi"]
+size = Vector2(79.25, 818)
 
 [node name="scene3" type="Node2D"]
+script = ExtResource("1_r2pi8")
+
+[node name="treesBlur" type="TextureRect" parent="."]
+z_index = 1
+offset_left = -34.0
+offset_top = 49.0
+offset_right = 1814.0
+offset_bottom = 791.0
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("2_087sr")
+expand_mode = 1
+
+[node name="background" type="TextureRect" parent="."]
+offset_top = -143.0
+offset_right = 1669.0
+offset_bottom = 684.0
+size_flags_horizontal = 6
+texture = ExtResource("2_lmrsu")
+
+[node name="floor" type="TextureRect" parent="."]
+offset_left = -80.0
+offset_top = 94.0
+offset_right = 6335.0
+offset_bottom = 3438.0
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("3_r2pi8")
+
+[node name="player" parent="." instance=ExtResource("4_63cu2")]
+y_sort_enabled = true
+position = Vector2(74, 496)
+scale = Vector2(1.46494, 1.46494)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+scale = Vector2(1.00877, 0.869533)
+offset = Vector2(0, -105)
+limit_left = 0
+limit_right = 1650
+
+[node name="Label" type="Label" parent="."]
+offset_left = 564.0
+offset_top = 318.0
+offset_right = 1112.0
+offset_bottom = 553.0
+theme_override_constants/line_spacing = 30
+theme_override_fonts/font = ExtResource("5_gmcgl")
+theme_override_font_sizes/font_size = 24
+text = "The floods reached the fields. 
+Crops were swallowed by the water,
+while the cattle wandered in it knee deep"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("6_5uf0h")]
+offset_left = 392.0
+offset_top = 206.0
+offset_right = 392.0
+offset_bottom = 206.0
+
+[node name="Cloud" parent="." instance=ExtResource("7_gm7q5")]
+
+[node name="Entrance" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Entrance"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance/Area2D"]
+position = Vector2(-10, 395)
+shape = SubResource("RectangleShape2D_2rqdi")
+
+[node name="Exit" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Exit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D"]
+position = Vector2(1683.63, 395)
+shape = SubResource("RectangleShape2D_2rqdi")
+
+[connection signal="body_entered" from="Entrance/Area2D" to="." method="_on_entrance_2d_body_entered"]
+[connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_2d_body_entered"]
