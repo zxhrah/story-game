@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb3b7vj3cvro"
-path="res://.godot/imported/ChatGPT Image Apr 24, 2025, 11_12_36 PM.png-dc2295665088b601547e16b8f9d1a23d.ctex"
+uid="uid://bkadmw0ykrusb"
+path="res://.godot/imported/bfish5.png-c1ad59a6e9fd742dea2496181ea02da7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/NPCs/ChatGPT Image Apr 24, 2025, 11_12_36 PM.png"
-dest_files=["res://.godot/imported/ChatGPT Image Apr 24, 2025, 11_12_36 PM.png-dc2295665088b601547e16b8f9d1a23d.ctex"]
+source_file="res://assets/character/NPCs/brownFish/bfish5.png"
+dest_files=["res://.godot/imported/bfish5.png-c1ad59a6e9fd742dea2496181ea02da7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3wcjgca76nb6"
-path="res://.godot/imported/fishermanSprite.png-2ccc79755bedab9c9925acc136cd3670.ctex"
+uid="uid://cp6ltb1c03abr"
+path="res://.godot/imported/bfish3.png-a69342bdea8bd1b78238a3fd0f13a344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/NPCs/fishermanSprite.png"
-dest_files=["res://.godot/imported/fishermanSprite.png-2ccc79755bedab9c9925acc136cd3670.ctex"]
+source_file="res://assets/character/NPCs/brownFish/bfish3.png"
+dest_files=["res://.godot/imported/bfish3.png-a69342bdea8bd1b78238a3fd0f13a344.ctex"]
 
 [params]
 

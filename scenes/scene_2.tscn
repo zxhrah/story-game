@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bkya73l0upn3m"]
+[gd_scene load_steps=52 format=4 uid="uid://bkya73l0upn3m"]
 
 [ext_resource type="Texture2D" uid="uid://bgfoq8v5kgbgo" path="res://assets/backgrounds/sky.png" id="1_ccscm"]
 [ext_resource type="Script" uid="uid://q22lrhgano7r" path="res://scenes/scene_2.gd" id="1_qo03w"]
@@ -17,83 +17,101 @@
 [ext_resource type="Texture2D" uid="uid://esif7ah8jxqe" path="res://assets/objects/trees/trees3.png" id="11_oyiwn"]
 [ext_resource type="Texture2D" uid="uid://c1bwoqdkav86b" path="res://assets/objects/trees/trees4.png" id="12_8igo0"]
 [ext_resource type="AudioStream" uid="uid://cijwu44b2nnug" path="res://assets/sounds/soundEffects/heavy-rain-314309.mp3" id="13_8egj7"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vlvxn"]
-texture = ExtResource("5_a3h35")
-0:0/size_in_atlas = Vector2i(13, 13)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_bt1fo"]
-sources/0 = SubResource("TileSetAtlasSource_vlvxn")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xl4q"]
-texture = ExtResource("6_8egj7")
-0:0/size_in_atlas = Vector2i(15, 15)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyiwn"]
-texture = ExtResource("7_4xuhb")
-0:0/size_in_atlas = Vector2i(16, 16)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8igo0"]
-texture = ExtResource("8_nbtma")
-0:0/size_in_atlas = Vector2i(14, 13)
-0:0/0 = 0
+[ext_resource type="Shader" uid="uid://qhctg8g7hlqv" path="res://scenes/extras/glowingRect.gdshader" id="17_i44rj"]
+[ext_resource type="PackedScene" uid="uid://dmmofqmdmlwo6" path="res://scenes/sprites/fisherman.tscn" id="18_0xl4q"]
+[ext_resource type="Shader" uid="uid://uke36betsphs" path="res://scenes/extras/color_rect.gdshader" id="19_oyiwn"]
+[ext_resource type="Script" uid="uid://bq1wec86rx54l" path="res://scenes/extras/color_rect.gd" id="20_8igo0"]
+[ext_resource type="PackedScene" uid="uid://bxq3kntpfin3l" path="res://scenes/sprites/greyFish.tscn" id="22_w3b3s"]
+[ext_resource type="PackedScene" uid="uid://b8xs13ta8hpr1" path="res://scenes/sprites/brownFish.tscn" id="23_unm0y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i44rj"]
 texture = ExtResource("5_a3h35")
 0:0/size_in_atlas = Vector2i(13, 13)
 0:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_i44rj"]
-sources/0 = SubResource("TileSetAtlasSource_0xl4q")
-sources/1 = SubResource("TileSetAtlasSource_oyiwn")
-sources/2 = SubResource("TileSetAtlasSource_8igo0")
-sources/3 = SubResource("TileSetAtlasSource_i44rj")
+[sub_resource type="TileSet" id="TileSet_bt1fo"]
+sources/0 = SubResource("TileSetAtlasSource_i44rj")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3b3s"]
-texture = ExtResource("5_a3h35")
-0:0/size_in_atlas = Vector2i(13, 13)
+texture = ExtResource("6_8egj7")
+0:0/size_in_atlas = Vector2i(15, 15)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_unm0y"]
-texture = ExtResource("9_bt1fo")
-0:0/size_in_atlas = Vector2i(15, 15)
+texture = ExtResource("7_4xuhb")
+0:0/size_in_atlas = Vector2i(16, 16)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkfw3"]
-texture = ExtResource("10_0xl4q")
-0:0/size_in_atlas = Vector2i(15, 15)
+texture = ExtResource("8_nbtma")
+0:0/size_in_atlas = Vector2i(14, 13)
 0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_unm0y"]
-sources/0 = SubResource("TileSetAtlasSource_w3b3s")
-sources/1 = SubResource("TileSetAtlasSource_unm0y")
-sources/2 = SubResource("TileSetAtlasSource_lkfw3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaq16"]
 texture = ExtResource("5_a3h35")
 0:0/size_in_atlas = Vector2i(13, 13)
 0:0/0 = 0
 
+[sub_resource type="TileSet" id="TileSet_i44rj"]
+sources/0 = SubResource("TileSetAtlasSource_w3b3s")
+sources/1 = SubResource("TileSetAtlasSource_unm0y")
+sources/2 = SubResource("TileSetAtlasSource_lkfw3")
+sources/3 = SubResource("TileSetAtlasSource_xaq16")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sivv1"]
-texture = ExtResource("11_oyiwn")
+texture = ExtResource("5_a3h35")
 0:0/size_in_atlas = Vector2i(13, 13)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3o3mb"]
+texture = ExtResource("9_bt1fo")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sy8t4"]
+texture = ExtResource("10_0xl4q")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_unm0y"]
+sources/0 = SubResource("TileSetAtlasSource_sivv1")
+sources/1 = SubResource("TileSetAtlasSource_3o3mb")
+sources/2 = SubResource("TileSetAtlasSource_sy8t4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1vpi"]
+texture = ExtResource("5_a3h35")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xu3bj"]
+texture = ExtResource("11_oyiwn")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgkl0"]
 texture = ExtResource("12_8igo0")
 0:0/size_in_atlas = Vector2i(15, 15)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_w3b3s"]
-sources/0 = SubResource("TileSetAtlasSource_xaq16")
-sources/3 = SubResource("TileSetAtlasSource_sivv1")
-sources/4 = SubResource("TileSetAtlasSource_3o3mb")
+sources/0 = SubResource("TileSetAtlasSource_g1vpi")
+sources/3 = SubResource("TileSetAtlasSource_xu3bj")
+sources/4 = SubResource("TileSetAtlasSource_dgkl0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8igo0"]
+shader = ExtResource("19_oyiwn")
+shader_parameter/time = 0.0
+shader_parameter/amplitude = 5.0
+shader_parameter/frequency = 20.0
+shader_parameter/speed = 2.0
+shader_parameter/border_thickness = 0.005
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo03w"]
 size = Vector2(79.25, 818)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3b3s"]
+shader = ExtResource("17_i44rj")
+shader_parameter/time = 0.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4xuhb"]
 blend_mode = 1
@@ -158,6 +176,7 @@ scale = Vector2(0.96, 0.96)
 texture = ExtResource("8_is556")
 expand_mode = 1
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="background" type="TextureRect" parent="."]
 offset_top = -143.0
@@ -165,6 +184,7 @@ offset_right = 1669.0
 offset_bottom = 684.0
 size_flags_horizontal = 6
 texture = ExtResource("1_ccscm")
+metadata/_edit_lock_ = true
 
 [node name="floor" type="TextureRect" parent="."]
 offset_left = -80.0
@@ -173,6 +193,7 @@ offset_right = 6335.0
 offset_bottom = 3438.0
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_is556")
+metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -220,15 +241,26 @@ text = "The fishing ponds overflowed and flooded the roads.
 The fish had now claimed our streets, 
 so residents cast nets everywhere to catch them."
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="options" type="CanvasLayer" parent="."]
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("4_is556")]
+[node name="OptionsMenu" parent="options" instance=ExtResource("4_is556")]
 offset_left = 392.0
 offset_top = 206.0
 offset_right = 392.0
 offset_bottom = 206.0
+metadata/_edit_lock_ = true
 
 [node name="Cloud" parent="." instance=ExtResource("5_ul8a6")]
+
+[node name="waterLevel" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8igo0")
+offset_left = 13.0
+offset_top = 640.0
+offset_right = 505.0
+offset_bottom = 974.0
+scale = Vector2(3.44, 1)
+color = Color(0.478431, 0.788235, 1, 0.360784)
+script = ExtResource("20_8igo0")
 
 [node name="Entrance" type="Node2D" parent="."]
 
@@ -238,6 +270,13 @@ offset_bottom = 206.0
 position = Vector2(-10, 395)
 shape = SubResource("RectangleShape2D_qo03w")
 
+[node name="ColorRect" type="ColorRect" parent="Entrance"]
+material = SubResource("ShaderMaterial_w3b3s")
+offset_left = -357.0
+offset_top = -4.0
+offset_right = 277.0
+offset_bottom = 800.0
+
 [node name="Exit" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Exit"]
@@ -245,6 +284,13 @@ shape = SubResource("RectangleShape2D_qo03w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D"]
 position = Vector2(1683.63, 395)
 shape = SubResource("RectangleShape2D_qo03w")
+
+[node name="ColorRect" type="ColorRect" parent="Exit"]
+material = SubResource("ShaderMaterial_w3b3s")
+offset_left = 1361.0
+offset_top = -4.0
+offset_right = 1995.0
+offset_bottom = 800.0
 
 [node name="rain" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_4xuhb")
@@ -259,6 +305,22 @@ stream = ExtResource("13_8egj7")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
+
+[node name="fisherman" parent="." instance=ExtResource("18_0xl4q")]
+position = Vector2(1400, 597)
+scale = Vector2(0.319998, 0.319998)
+
+[node name="greyFish" parent="." instance=ExtResource("22_w3b3s")]
+position = Vector2(1049, 613)
+scale = Vector2(0.175792, 0.175792)
+
+[node name="brownFish" parent="." instance=ExtResource("23_unm0y")]
+position = Vector2(1537, 622)
+scale = Vector2(0.08, 0.08)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("23_unm0y")]
+position = Vector2(517, 626)
+scale = Vector2(0.0899785, 0.0899785)
 
 [connection signal="body_entered" from="Entrance/Area2D" to="." method="_on_entrance_2d_body_entered"]
 [connection signal="body_entered" from="Exit/Area2D" to="." method="_on_area_2d_body_entered"]

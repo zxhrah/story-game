@@ -316,7 +316,7 @@ shape = SubResource("RectangleShape2D_wi4c7")
 material = SubResource("ShaderMaterial_5luka")
 offset_left = 1361.0
 offset_top = -4.0
-offset_right = 1946.0
+offset_right = 1995.0
 offset_bottom = 800.0
 
 [node name="Cloud" parent="." instance=ExtResource("8_70vka")]

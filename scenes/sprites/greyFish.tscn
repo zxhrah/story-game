@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxq3kntpfin3l"]
+
+[ext_resource type="Texture2D" uid="uid://bncba6vtjlobk" path="res://assets/character/NPCs/greyFish/fish1.png" id="1_bxi6x"]
+[ext_resource type="Script" uid="uid://b4b85prr5c077" path="res://scenes/sprites/grey_fish.gd" id="1_sfc6e"]
+[ext_resource type="Texture2D" uid="uid://dnto4ki60ties" path="res://assets/character/NPCs/greyFish/fish2.png" id="2_sfc6e"]
+[ext_resource type="Texture2D" uid="uid://d203l8jloq5v4" path="res://assets/character/NPCs/greyFish/fish3.png" id="3_n8ywe"]
+[ext_resource type="Texture2D" uid="uid://c5konuuqt708h" path="res://assets/character/NPCs/greyFish/fish4.png" id="4_effdc"]
+[ext_resource type="Texture2D" uid="uid://dvdpmutdeq8jp" path="res://assets/character/NPCs/greyFish/fish5.png" id="5_pw5qj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o44vk"]
+atlas = ExtResource("1_bxi6x")
+region = Rect2(0, 0, 2048, 1536)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jupxd"]
+atlas = ExtResource("2_sfc6e")
+region = Rect2(0, 0, 2048, 1536)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vom5o"]
+atlas = ExtResource("3_n8ywe")
+region = Rect2(0, 0, 2048, 1536)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rmg2"]
+atlas = ExtResource("4_effdc")
+region = Rect2(0, 0, 2048, 1536)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djnoi"]
+atlas = ExtResource("5_pw5qj")
+region = Rect2(0, 0, 2048, 1536)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdtsj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o44vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jupxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vom5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rmg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djnoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rmg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vom5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jupxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o44vk")
+}],
+"loop": true,
+"name": &"emoting",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_sfc6e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jdtsj")
+animation = &"emoting"
+frame_progress = 0.354235

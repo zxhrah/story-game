@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvaux3plg0ps0"]
+[gd_scene load_steps=39 format=4 uid="uid://bvaux3plg0ps0"]
 
 [ext_resource type="Script" uid="uid://bvy34o5oqpxx" path="res://scenes/scene_3.gd" id="1_r2pi8"]
 [ext_resource type="Texture2D" uid="uid://c1la71nsmg328" path="res://assets/objects/blurred_trees.png" id="2_087sr"]
@@ -8,9 +8,110 @@
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="5_gmcgl"]
 [ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="6_5uf0h"]
 [ext_resource type="PackedScene" uid="uid://byeai7rtiqq3p" path="res://scenes/extras/cloud.tscn" id="7_gm7q5"]
+[ext_resource type="Texture2D" uid="uid://dt72spmbqa63a" path="res://assets/objects/trees/bush.png" id="9_wsd5d"]
+[ext_resource type="Texture2D" uid="uid://esif7ah8jxqe" path="res://assets/objects/trees/trees3.png" id="10_cuwey"]
+[ext_resource type="Texture2D" uid="uid://c1bwoqdkav86b" path="res://assets/objects/trees/trees4.png" id="11_yw7mx"]
+[ext_resource type="Texture2D" uid="uid://fc8a4rbcnukq" path="res://assets/objects/trees/trees5.png" id="12_t5e5o"]
+[ext_resource type="Texture2D" uid="uid://crrc5vpb3xbj6" path="res://assets/objects/trees/trees6.png" id="13_i6f48"]
+[ext_resource type="Texture2D" uid="uid://cy3gj2ccikq0s" path="res://assets/objects/trees/trees7.png" id="14_ptyiu"]
+[ext_resource type="Texture2D" uid="uid://dh2ofkb4bsl63" path="res://assets/objects/trees/trees1.png" id="15_pwx8t"]
+[ext_resource type="Texture2D" uid="uid://bluljdsb071gx" path="res://assets/objects/trees/trees2.png" id="16_7drqf"]
+[ext_resource type="Shader" uid="uid://qhctg8g7hlqv" path="res://scenes/extras/glowingRect.gdshader" id="17_t5e5o"]
+[ext_resource type="Shader" uid="uid://uke36betsphs" path="res://scenes/extras/color_rect.gdshader" id="17_yw7mx"]
+[ext_resource type="Script" uid="uid://bq1wec86rx54l" path="res://scenes/extras/color_rect.gd" id="18_t5e5o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uagnf"]
+texture = ExtResource("9_wsd5d")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tu0qc"]
+sources/0 = SubResource("TileSetAtlasSource_uagnf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6wdc2"]
+texture = ExtResource("9_wsd5d")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpi6e"]
+texture = ExtResource("10_cuwey")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5s0f"]
+texture = ExtResource("11_yw7mx")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_83ulv"]
+sources/0 = SubResource("TileSetAtlasSource_6wdc2")
+sources/3 = SubResource("TileSetAtlasSource_lpi6e")
+sources/4 = SubResource("TileSetAtlasSource_v5s0f")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfsoa"]
+texture = ExtResource("12_t5e5o")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2r7w"]
+texture = ExtResource("13_i6f48")
+0:0/size_in_atlas = Vector2i(16, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f8y4a"]
+texture = ExtResource("14_ptyiu")
+0:0/size_in_atlas = Vector2i(14, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmewa"]
+texture = ExtResource("9_wsd5d")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r1nib"]
+sources/0 = SubResource("TileSetAtlasSource_nfsoa")
+sources/1 = SubResource("TileSetAtlasSource_v2r7w")
+sources/2 = SubResource("TileSetAtlasSource_f8y4a")
+sources/3 = SubResource("TileSetAtlasSource_cmewa")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22rrb"]
+texture = ExtResource("9_wsd5d")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07ijg"]
+texture = ExtResource("15_pwx8t")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvjpb"]
+texture = ExtResource("16_7drqf")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8j55m"]
+sources/0 = SubResource("TileSetAtlasSource_22rrb")
+sources/1 = SubResource("TileSetAtlasSource_07ijg")
+sources/2 = SubResource("TileSetAtlasSource_qvjpb")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rqdi"]
 size = Vector2(79.25, 818)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptyiu"]
+shader = ExtResource("17_t5e5o")
+shader_parameter/time = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5e5o"]
+shader = ExtResource("17_t5e5o")
+shader_parameter/time = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6f48"]
+shader = ExtResource("17_yw7mx")
+shader_parameter/time = 0.0
+shader_parameter/amplitude = 5.0
+shader_parameter/frequency = 20.0
+shader_parameter/speed = 2.0
+shader_parameter/border_thickness = 0.005
 
 [node name="scene3" type="Node2D"]
 script = ExtResource("1_r2pi8")
@@ -39,6 +140,30 @@ offset_right = 6335.0
 offset_bottom = 3438.0
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_r2pi8")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="tinyBushes" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(0.24, 0.24)
+tile_map_data = PackedByteArray("AABTAYIAAAAAAAAAAAB0AYAAAAAAAAAAAACUAYAAAAAAAAAAAABEAIIAAAAAAAAAAABmAIIAAAAAAAAAAAANAIIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_tu0qc")
+
+[node name="mediumTrees" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(1, 1)
+tile_map_data = PackedByteArray("AABLABkAAwAAAAAAAAAOABkAAwAAAAAAAAApABkABAAAAAAAAABiABkABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_83ulv")
+
+[node name="smallTrees" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(0.439999, 0.439999)
+tile_map_data = PackedByteArray("AAA6AEEAAAAAAAAAAADHAEEAAAAAAAAAABAEAEEAAQAAAAAAAAAnAEMAAgAAAAAAAAAuAEUAAwAAAAAAAACdAEQAAwAAAAAAAAAPAEUAAwAAAAAAAACKAEEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_r1nib")
+
+[node name="bigTrees" type="TileMapLayer" parent="TileMap"]
+position = Vector2(-325, -269)
+scale = Vector2(1.52, 1.52)
+tile_map_data = PackedByteArray("AAATABkAAgAAAAAAAABEABkAAQAAAAAAAABUABkAAQAAAAAAAAAuABwAAAAAAAAAAAAkABwAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_8j55m")
 
 [node name="player" parent="." instance=ExtResource("4_63cu2")]
 y_sort_enabled = true
@@ -81,6 +206,13 @@ offset_bottom = 206.0
 position = Vector2(-10, 395)
 shape = SubResource("RectangleShape2D_2rqdi")
 
+[node name="ColorRect" type="ColorRect" parent="Entrance"]
+material = SubResource("ShaderMaterial_ptyiu")
+offset_left = -357.0
+offset_top = -4.0
+offset_right = 277.0
+offset_bottom = 800.0
+
 [node name="Exit" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Exit"]
@@ -88,6 +220,23 @@ shape = SubResource("RectangleShape2D_2rqdi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D"]
 position = Vector2(1683.63, 395)
 shape = SubResource("RectangleShape2D_2rqdi")
+
+[node name="ColorRect" type="ColorRect" parent="Exit"]
+material = SubResource("ShaderMaterial_t5e5o")
+offset_left = 1361.0
+offset_top = -4.0
+offset_right = 1995.0
+offset_bottom = 800.0
+
+[node name="waterLevel" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_i6f48")
+offset_left = -124.0
+offset_top = 535.0
+offset_right = 444.0
+offset_bottom = 869.0
+scale = Vector2(3.44, 1)
+color = Color(0.478431, 0.788235, 1, 0.360784)
+script = ExtResource("18_t5e5o")
 
 [connection signal="body_entered" from="Entrance/Area2D" to="." method="_on_entrance_2d_body_entered"]
 [connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_2d_body_entered"]
