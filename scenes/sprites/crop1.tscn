@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://ck4gwkp8b7120"]
+
+[ext_resource type="Script" uid="uid://c7t5tbgxmacmu" path="res://scenes/sprites/fisherman.gd" id="1_em32f"]
+[ext_resource type="Texture2D" uid="uid://fic1pcne3lxh" path="res://assets/character/NPCs/plantSprite.png" id="2_r403l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em32f"]
+atlas = ExtResource("2_r403l")
+region = Rect2(256, 4, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r403l"]
+atlas = ExtResource("2_r403l")
+region = Rect2(320, 4, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsm40"]
+atlas = ExtResource("2_r403l")
+region = Rect2(384, 4, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ipy1"]
+atlas = ExtResource("2_r403l")
+region = Rect2(384, 68, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjfks"]
+atlas = ExtResource("2_r403l")
+region = Rect2(384, 132, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbfh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em32f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r403l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsm40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ipy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjfks")
+}],
+"loop": true,
+"name": &"emoting",
+"speed": 3.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_em32f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jbfh6")
+animation = &"emoting"
+frame_progress = 0.690245

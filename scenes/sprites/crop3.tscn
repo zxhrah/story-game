@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://du667tj3yc1wu"]
+
+[ext_resource type="Script" uid="uid://c7t5tbgxmacmu" path="res://scenes/sprites/fisherman.gd" id="1_sfrcs"]
+[ext_resource type="Texture2D" uid="uid://fic1pcne3lxh" path="res://assets/character/NPCs/plantSprite.png" id="2_c1vwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tft53"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(0, 260, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsx84"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(64, 260, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwbgl"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(128, 260, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qba82"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(192, 260, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnlm1"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(0, 324, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp4mn"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(64, 324, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtnq5"]
+atlas = ExtResource("2_c1vwn")
+region = Rect2(128, 324, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3q3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tft53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsx84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwbgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qba82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnlm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp4mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtnq5")
+}],
+"loop": true,
+"name": &"emoting",
+"speed": 3.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_sfrcs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o3q3n")
+animation = &"emoting"

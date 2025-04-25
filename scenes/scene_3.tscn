@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bvaux3plg0ps0"]
+[gd_scene load_steps=43 format=4 uid="uid://bvaux3plg0ps0"]
 
 [ext_resource type="Script" uid="uid://bvy34o5oqpxx" path="res://scenes/scene_3.gd" id="1_r2pi8"]
 [ext_resource type="Texture2D" uid="uid://c1la71nsmg328" path="res://assets/objects/blurred_trees.png" id="2_087sr"]
@@ -12,9 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://esif7ah8jxqe" path="res://assets/objects/trees/trees3.png" id="10_cuwey"]
 [ext_resource type="Texture2D" uid="uid://c1bwoqdkav86b" path="res://assets/objects/trees/trees4.png" id="11_yw7mx"]
 [ext_resource type="Texture2D" uid="uid://fc8a4rbcnukq" path="res://assets/objects/trees/trees5.png" id="12_t5e5o"]
+[ext_resource type="PackedScene" uid="uid://ciaosk8cf4cqy" path="res://scenes/sprites/crop4.tscn" id="13_7drqf"]
 [ext_resource type="Texture2D" uid="uid://crrc5vpb3xbj6" path="res://assets/objects/trees/trees6.png" id="13_i6f48"]
+[ext_resource type="PackedScene" uid="uid://ck4gwkp8b7120" path="res://scenes/sprites/crop1.tscn" id="13_ptyiu"]
 [ext_resource type="Texture2D" uid="uid://cy3gj2ccikq0s" path="res://assets/objects/trees/trees7.png" id="14_ptyiu"]
+[ext_resource type="PackedScene" uid="uid://du667tj3yc1wu" path="res://scenes/sprites/crop3.tscn" id="14_uagnf"]
 [ext_resource type="Texture2D" uid="uid://dh2ofkb4bsl63" path="res://assets/objects/trees/trees1.png" id="15_pwx8t"]
+[ext_resource type="PackedScene" uid="uid://b5ix7axfq5rsp" path="res://scenes/sprites/crop2.tscn" id="15_tu0qc"]
 [ext_resource type="Texture2D" uid="uid://bluljdsb071gx" path="res://assets/objects/trees/trees2.png" id="16_7drqf"]
 [ext_resource type="Shader" uid="uid://qhctg8g7hlqv" path="res://scenes/extras/glowingRect.gdshader" id="17_t5e5o"]
 [ext_resource type="Shader" uid="uid://uke36betsphs" path="res://scenes/extras/color_rect.gdshader" id="17_yw7mx"]
@@ -150,7 +154,6 @@ tile_map_data = PackedByteArray("AABTAYIAAAAAAAAAAAB0AYAAAAAAAAAAAACUAYAAAAAAAAA
 tile_set = SubResource("TileSet_tu0qc")
 
 [node name="mediumTrees" type="TileMapLayer" parent="TileMap"]
-scale = Vector2(1, 1)
 tile_map_data = PackedByteArray("AABLABkAAwAAAAAAAAAOABkAAwAAAAAAAAApABkABAAAAAAAAABiABkABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_83ulv")
 
@@ -175,6 +178,21 @@ scale = Vector2(1.00877, 0.869533)
 offset = Vector2(0, -105)
 limit_left = 0
 limit_right = 1650
+
+[node name="crop4" parent="." instance=ExtResource("13_7drqf")]
+position = Vector2(1606, 563)
+scale = Vector2(1.44, 1.44)
+
+[node name="crop3" parent="." instance=ExtResource("14_uagnf")]
+position = Vector2(260, 643)
+scale = Vector2(2.12, 2.12)
+
+[node name="crop2" parent="." instance=ExtResource("15_tu0qc")]
+position = Vector2(607, 563)
+scale = Vector2(1.52, 1.52)
+
+[node name="crop1" parent="." instance=ExtResource("13_ptyiu")]
+position = Vector2(1276, 548)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 564.0
