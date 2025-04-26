@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bvaux3plg0ps0"]
+[gd_scene load_steps=46 format=4 uid="uid://bvaux3plg0ps0"]
 
 [ext_resource type="Script" uid="uid://bvy34o5oqpxx" path="res://scenes/scene_3.gd" id="1_r2pi8"]
 [ext_resource type="Texture2D" uid="uid://c1la71nsmg328" path="res://assets/objects/blurred_trees.png" id="2_087sr"]
@@ -23,6 +23,9 @@
 [ext_resource type="Shader" uid="uid://qhctg8g7hlqv" path="res://scenes/extras/glowingRect.gdshader" id="17_t5e5o"]
 [ext_resource type="Shader" uid="uid://uke36betsphs" path="res://scenes/extras/color_rect.gdshader" id="17_yw7mx"]
 [ext_resource type="Script" uid="uid://bq1wec86rx54l" path="res://scenes/extras/color_rect.gd" id="18_t5e5o"]
+[ext_resource type="PackedScene" uid="uid://cpb3112y2bhxn" path="res://scenes/sprites/cow.tscn" id="18_uagnf"]
+[ext_resource type="AudioStream" uid="uid://bu3jepckcgjrf" path="res://assets/sounds/soundEffects/cows_mooing_mono_4824-100996-[AudioTrimmer.com].mp3" id="19_6wdc2"]
+[ext_resource type="AudioStream" uid="uid://b0fbdkhbqeoo2" path="res://assets/sounds/soundEffects/flowing-water.mp3" id="25_tu0qc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uagnf"]
 texture = ExtResource("9_wsd5d")
@@ -194,6 +197,19 @@ scale = Vector2(1.52, 1.52)
 [node name="crop1" parent="." instance=ExtResource("13_ptyiu")]
 position = Vector2(1276, 548)
 
+[node name="cow" parent="." instance=ExtResource("18_uagnf")]
+position = Vector2(996, 509)
+scale = Vector2(-0.5, 0.52)
+
+[node name="cowAudio" type="AudioStreamPlayer2D" parent="cow"]
+stream = ExtResource("19_6wdc2")
+autoplay = true
+bus = &"SFX"
+
+[node name="MooTimer" type="Timer" parent="cow/cowAudio"]
+wait_time = 10.0
+autostart = true
+
 [node name="Label" type="Label" parent="."]
 offset_left = 564.0
 offset_top = 318.0
@@ -205,6 +221,7 @@ theme_override_font_sizes/font_size = 24
 text = "The floods reached the fields. 
 Crops were swallowed by the water,
 while the cattle wandered in it knee deep"
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -213,6 +230,7 @@ offset_left = 392.0
 offset_top = 206.0
 offset_right = 392.0
 offset_bottom = 206.0
+metadata/_edit_lock_ = true
 
 [node name="Cloud" parent="." instance=ExtResource("7_gm7q5")]
 
@@ -256,5 +274,11 @@ scale = Vector2(3.44, 1)
 color = Color(0.478431, 0.788235, 1, 0.360784)
 script = ExtResource("18_t5e5o")
 
+[node name="water" type="AudioStreamPlayer2D" parent="waterLevel"]
+stream = ExtResource("25_tu0qc")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="timeout" from="cow/cowAudio/MooTimer" to="." method="_on_moo_timer_timeout"]
 [connection signal="body_entered" from="Entrance/Area2D" to="." method="_on_entrance_2d_body_entered"]
 [connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_2d_body_entered"]

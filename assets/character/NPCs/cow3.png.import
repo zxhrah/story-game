@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ob42lj4ic5dl"
-path="res://.godot/imported/spritesheet (3).png-51974df9aaf5490fd1ccc96268906743.ctex"
+uid="uid://bple1bvx5t5a5"
+path="res://.godot/imported/cow3.png-8c9f0f249935a109b79ffa35d80d2834.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/NPCs/spritesheet (3).png"
-dest_files=["res://.godot/imported/spritesheet (3).png-51974df9aaf5490fd1ccc96268906743.ctex"]
+source_file="res://assets/character/NPCs/cow3.png"
+dest_files=["res://.godot/imported/cow3.png-8c9f0f249935a109b79ffa35d80d2834.ctex"]
 
 [params]
 

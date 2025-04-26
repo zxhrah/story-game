@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsh1sc3avmbhm"
-path="res://.godot/imported/cow - Copy - Copy - Copy - Copy - Copy.png-fb8bdcc8ac8eb028d231df3cb994bf88.ctex"
+uid="uid://bjfcar8sp80l7"
+path="res://.godot/imported/cow5.png-5a9e37510f7e9cd02a8e610b4d7ad560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/NPCs/cow - Copy - Copy - Copy - Copy - Copy.png"
-dest_files=["res://.godot/imported/cow - Copy - Copy - Copy - Copy - Copy.png-fb8bdcc8ac8eb028d231df3cb994bf88.ctex"]
+source_file="res://assets/character/NPCs/cow5.png"
+dest_files=["res://.godot/imported/cow5.png-5a9e37510f7e9cd02a8e610b4d7ad560.ctex"]
 
 [params]
 

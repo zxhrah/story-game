@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://cpb3112y2bhxn"]
+
+[ext_resource type="Texture2D" uid="uid://s3ag1s5kagsh" path="res://assets/character/NPCs/cow1.png" id="1_oodv2"]
+[ext_resource type="Script" uid="uid://c7t5tbgxmacmu" path="res://scenes/sprites/fisherman.gd" id="1_whtqm"]
+[ext_resource type="Texture2D" uid="uid://clbi60d65g726" path="res://assets/character/NPCs/cow2.png" id="2_whtqm"]
+[ext_resource type="Texture2D" uid="uid://bple1bvx5t5a5" path="res://assets/character/NPCs/cow3.png" id="3_uyfq4"]
+[ext_resource type="Texture2D" uid="uid://bwvhxol88e05f" path="res://assets/character/NPCs/cow4.png" id="4_fjcgk"]
+[ext_resource type="Texture2D" uid="uid://bjfcar8sp80l7" path="res://assets/character/NPCs/cow5.png" id="5_fel0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeby1"]
+atlas = ExtResource("1_oodv2")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdxmq"]
+atlas = ExtResource("2_whtqm")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2s8s"]
+atlas = ExtResource("3_uyfq4")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxihu"]
+atlas = ExtResource("4_fjcgk")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwkp4"]
+atlas = ExtResource("5_fel0o")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74ne5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeby1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdxmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2s8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxihu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwkp4")
+}],
+"loop": true,
+"name": &"emoting",
+"speed": 5.0
+}]
+
+[node name="cow" type="CharacterBody2D"]
+script = ExtResource("1_whtqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_74ne5")
+animation = &"emoting"
+frame_progress = 0.78156

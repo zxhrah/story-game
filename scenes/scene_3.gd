@@ -1,9 +1,10 @@
 extends Node2D
 
-
+@onready var cow_audio = $cow/cowAudio
+@onready var moo_timer = $cow/cowAudio/MooTimer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,3 +21,12 @@ func _on_entrance_2d_body_entered(body: Node2D) -> void:
 func _on_exit_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		SceneTransition.change_scene("res://scenes/scene_4.tscn")
+
+func _moo():
+	if not cow_audio.playing:
+		cow_audio.play()
+		# After the cow sound finishes, wait 8 seconds
+		moo_timer.start(10.0)
+
+func _on_moo_timer_timeout() -> void:
+	_moo()

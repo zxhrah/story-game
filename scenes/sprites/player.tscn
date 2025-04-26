@@ -1,9 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://cfmcelubuiv0b"]
+[gd_scene load_steps=45 format=3 uid="uid://cfmcelubuiv0b"]
 
 [ext_resource type="Script" uid="uid://btilyn5fdcwv6" path="res://scenes/sprites/player.gd" id="1_amofw"]
 [ext_resource type="Texture2D" uid="uid://msj6lg4aqf5e" path="res://assets/character/standard/walk.png" id="1_ig3ou"]
 [ext_resource type="Texture2D" uid="uid://b2pu68j748boi" path="res://assets/character/standard/thrust.png" id="2_mjkdo"]
 [ext_resource type="AudioStream" uid="uid://3ca3x3mb1rnx" path="res://assets/sounds/soundEffects/walking.mp3" id="4_oaouy"]
+[ext_resource type="Texture2D" uid="uid://pluc17r8jy3g" path="res://assets/objects/boat_left.png" id="5_7cp5w"]
+[ext_resource type="Texture2D" uid="uid://c6rwpuad3itci" path="res://assets/objects/boat_right.png" id="6_riljq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjkdo"]
 atlas = ExtResource("1_ig3ou")
@@ -305,3 +307,15 @@ shape = SubResource("RectangleShape2D_amofw")
 stream = ExtResource("4_oaouy")
 volume_db = -5.0
 bus = &"SFX"
+
+[node name="Boat" type="Node2D" parent="."]
+
+[node name="BoatLeft" type="Sprite2D" parent="Boat"]
+position = Vector2(1.48, 24.36)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_7cp5w")
+
+[node name="BoatRight" type="Sprite2D" parent="Boat"]
+position = Vector2(1.48, 24.36)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("6_riljq")

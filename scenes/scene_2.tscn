@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://bkya73l0upn3m"]
+[gd_scene load_steps=54 format=4 uid="uid://bkya73l0upn3m"]
 
 [ext_resource type="Texture2D" uid="uid://bgfoq8v5kgbgo" path="res://assets/backgrounds/sky.png" id="1_ccscm"]
 [ext_resource type="Script" uid="uid://q22lrhgano7r" path="res://scenes/scene_2.gd" id="1_qo03w"]
@@ -22,6 +22,7 @@
 [ext_resource type="Shader" uid="uid://uke36betsphs" path="res://scenes/extras/color_rect.gdshader" id="19_oyiwn"]
 [ext_resource type="Script" uid="uid://bq1wec86rx54l" path="res://scenes/extras/color_rect.gd" id="20_8igo0"]
 [ext_resource type="PackedScene" uid="uid://bxq3kntpfin3l" path="res://scenes/sprites/greyFish.tscn" id="22_w3b3s"]
+[ext_resource type="AudioStream" uid="uid://b0fbdkhbqeoo2" path="res://assets/sounds/soundEffects/flowing-water.mp3" id="22_xaq16"]
 [ext_resource type="PackedScene" uid="uid://b8xs13ta8hpr1" path="res://scenes/sprites/brownFish.tscn" id="23_unm0y"]
 [ext_resource type="AudioStream" uid="uid://1k5m7h2b6rbq" path="res://assets/sounds/soundEffects/fishFlop.mp3" id="24_lkfw3"]
 
@@ -302,6 +303,11 @@ offset_bottom = 974.0
 scale = Vector2(3.44, 1)
 color = Color(0.478431, 0.788235, 1, 0.360784)
 script = ExtResource("20_8igo0")
+
+[node name="water" type="AudioStreamPlayer2D" parent="waterLevel"]
+stream = ExtResource("22_xaq16")
+autoplay = true
+bus = &"SFX"
 
 [node name="Entrance" type="Node2D" parent="."]
 

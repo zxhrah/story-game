@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpu2ekad0lsbs"]
+[gd_scene load_steps=46 format=4 uid="uid://bpu2ekad0lsbs"]
 
 [ext_resource type="Script" uid="uid://ck44v6b4qpbyp" path="res://scenes/scene_4.gd" id="1_hyci5"]
 [ext_resource type="Texture2D" uid="uid://bgfoq8v5kgbgo" path="res://assets/backgrounds/sky.png" id="2_4m5or"]
@@ -6,11 +6,168 @@
 [ext_resource type="Texture2D" uid="uid://bvch6k2gux6bm" path="res://assets/flooring/wet_floor.png" id="3_hyci5"]
 [ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="4_niqgf"]
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="5_3hk0k"]
+[ext_resource type="Texture2D" uid="uid://dt72spmbqa63a" path="res://assets/objects/trees/bush.png" id="5_sv37r"]
+[ext_resource type="Texture2D" uid="uid://esif7ah8jxqe" path="res://assets/objects/trees/trees3.png" id="6_0xq8t"]
 [ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="6_wjcmq"]
+[ext_resource type="Texture2D" uid="uid://c1bwoqdkav86b" path="res://assets/objects/trees/trees4.png" id="7_ckhbx"]
 [ext_resource type="PackedScene" uid="uid://byeai7rtiqq3p" path="res://scenes/extras/cloud.tscn" id="7_r3hp6"]
+[ext_resource type="Texture2D" uid="uid://fc8a4rbcnukq" path="res://assets/objects/trees/trees5.png" id="8_ofcpl"]
+[ext_resource type="Shader" uid="uid://uke36betsphs" path="res://scenes/extras/color_rect.gdshader" id="9_3hk0k"]
+[ext_resource type="Texture2D" uid="uid://crrc5vpb3xbj6" path="res://assets/objects/trees/trees6.png" id="9_b7t8y"]
+[ext_resource type="Texture2D" uid="uid://cy3gj2ccikq0s" path="res://assets/objects/trees/trees7.png" id="10_2le7j"]
+[ext_resource type="Shader" uid="uid://dgvi2xk0ot7dw" path="res://scenes/extras/waves3.gdshader" id="10_r3hp6"]
+[ext_resource type="Script" uid="uid://bq1wec86rx54l" path="res://scenes/extras/color_rect.gd" id="10_wjcmq"]
+[ext_resource type="Script" uid="uid://cp77k4vlny1a5" path="res://scenes/extras/waves_3.gd" id="11_0r6j4"]
+[ext_resource type="Texture2D" uid="uid://dh2ofkb4bsl63" path="res://assets/objects/trees/trees1.png" id="11_lgox2"]
+[ext_resource type="AudioStream" uid="uid://b0fbdkhbqeoo2" path="res://assets/sounds/soundEffects/flowing-water.mp3" id="11_r3hp6"]
+[ext_resource type="Texture2D" uid="uid://bluljdsb071gx" path="res://assets/objects/trees/trees2.png" id="12_8ckvf"]
+[ext_resource type="Script" uid="uid://ia2m1rjvwb3t" path="res://scenes/extras/wave.gd" id="12_wjcmq"]
+[ext_resource type="Shader" uid="uid://qhctg8g7hlqv" path="res://scenes/extras/glowingRect.gdshader" id="15_tlhsj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2s7x"]
+texture = ExtResource("5_sv37r")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2rkue"]
+sources/0 = SubResource("TileSetAtlasSource_p2s7x")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvh8r"]
+texture = ExtResource("5_sv37r")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1et5"]
+texture = ExtResource("6_0xq8t")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2581"]
+texture = ExtResource("7_ckhbx")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mqn5i"]
+sources/0 = SubResource("TileSetAtlasSource_qvh8r")
+sources/3 = SubResource("TileSetAtlasSource_q1et5")
+sources/4 = SubResource("TileSetAtlasSource_h2581")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6d504"]
+texture = ExtResource("8_ofcpl")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uevy"]
+texture = ExtResource("9_b7t8y")
+0:0/size_in_atlas = Vector2i(16, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kw1al"]
+texture = ExtResource("10_2le7j")
+0:0/size_in_atlas = Vector2i(14, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jo5u3"]
+texture = ExtResource("5_sv37r")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3n6a6"]
+sources/0 = SubResource("TileSetAtlasSource_6d504")
+sources/1 = SubResource("TileSetAtlasSource_8uevy")
+sources/2 = SubResource("TileSetAtlasSource_kw1al")
+sources/3 = SubResource("TileSetAtlasSource_jo5u3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6tll4"]
+texture = ExtResource("5_sv37r")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3xm4"]
+texture = ExtResource("11_lgox2")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ojv2j"]
+texture = ExtResource("12_8ckvf")
+0:0/size_in_atlas = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_43s5t"]
+sources/0 = SubResource("TileSetAtlasSource_6tll4")
+sources/1 = SubResource("TileSetAtlasSource_k3xm4")
+sources/2 = SubResource("TileSetAtlasSource_ojv2j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0r6j4"]
+shader = ExtResource("9_3hk0k")
+shader_parameter/time = 0.0
+shader_parameter/amplitude = 5.0
+shader_parameter/frequency = 20.0
+shader_parameter/speed = 2.0
+shader_parameter/border_thickness = 0.005
+
+[sub_resource type="Shader" id="Shader_3hk0k"]
+code = "shader_type canvas_item;
+
+uniform float time;
+uniform float amplitude = 5.0;
+uniform float frequency = 50.0;
+uniform float speed = 2.0;
+uniform float border_thickness = 0.005; // ~0.5px depending on resolution
+
+void fragment() {
+    vec2 uv = UV;
+
+    // Combined sine waves for more natural variation
+    float wave =
+        sin(uv.x * frequency + time * speed) +
+        0.5 * sin(uv.x * (frequency * 0.5) + time * speed * 1.3);
+
+    // Round out the wave a bit more
+    wave = pow(abs(wave), 1.5) * sign(wave);
+    wave *= amplitude / 100.0;
+
+    // Create a smooth alpha transition for the main wave
+    float wave_alpha = smoothstep(wave - 0.01, wave + 0.01, uv.y);
+
+    // Add a thin white border at the top of the wave
+    float border = smoothstep(wave - border_thickness, wave, uv.y)
+                 - smoothstep(wave, wave + border_thickness, uv.y);
+
+    // Mix water color and border color
+    vec4 water_color = vec4(0.2, 0.6, 1.0, 0.5 * wave_alpha);
+    vec4 border_color = vec4(1.0, 1.0, 1.0, border); // White
+
+    COLOR = mix(water_color, border_color, border);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjcmq"]
+shader = SubResource("Shader_3hk0k")
+shader_parameter/time = 10.0
+shader_parameter/amplitude = 5.0
+shader_parameter/frequency = 30.0
+shader_parameter/speed = 2.0
+shader_parameter/border_thickness = 0.005
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlhsj"]
+shader = ExtResource("10_r3hp6")
+shader_parameter/time = 0.0
+shader_parameter/amplitude = 5.0
+shader_parameter/frequency = 50.0
+shader_parameter/speed = 2.0
+shader_parameter/border_thickness = 0.005
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0r6j4"]
 size = Vector2(79.25, 818)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx521"]
+shader = ExtResource("15_tlhsj")
+shader_parameter/time = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bctgt"]
+shader = ExtResource("15_tlhsj")
+shader_parameter/time = 0.0
 
 [node name="scene4" type="Node2D"]
 script = ExtResource("1_hyci5")
@@ -41,6 +198,44 @@ offset_bottom = 3438.0
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_hyci5")
 
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="tinyBushes" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(0.24, 0.24)
+tile_map_data = PackedByteArray("AABTAYIAAAAAAAAAAAB0AYAAAAAAAAAAAACUAYAAAAAAAAAAAABEAIIAAAAAAAAAAABmAIIAAAAAAAAAAAANAIIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_2rkue")
+
+[node name="mediumTrees" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AABLABkAAwAAAAAAAAAOABkAAwAAAAAAAAApABkABAAAAAAAAABiABkABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_mqn5i")
+
+[node name="smallTrees" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(0.439999, 0.439999)
+tile_map_data = PackedByteArray("AAA6AEEAAAAAAAAAAADHAEEAAAAAAAAAABAEAEEAAQAAAAAAAAAnAEMAAgAAAAAAAAAuAEUAAwAAAAAAAACdAEQAAwAAAAAAAAAPAEUAAwAAAAAAAACKAEEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_3n6a6")
+
+[node name="bigTrees" type="TileMapLayer" parent="TileMap"]
+position = Vector2(-325, -269)
+scale = Vector2(1.52, 1.52)
+tile_map_data = PackedByteArray("AAATABkAAgAAAAAAAABEABkAAQAAAAAAAABUABkAAQAAAAAAAAAuABwAAAAAAAAAAAAkABwAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_43s5t")
+
+[node name="waterLevel" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0r6j4")
+offset_left = -87.0
+offset_top = 492.0
+offset_right = 450.0
+offset_bottom = 826.0
+scale = Vector2(3.44, 1)
+color = Color(0.478431, 0.788235, 1, 0.360784)
+script = ExtResource("10_wjcmq")
+
+[node name="water" type="AudioStreamPlayer2D" parent="waterLevel"]
+stream = ExtResource("11_r3hp6")
+autoplay = true
+bus = &"SFX"
+
 [node name="player" parent="." instance=ExtResource("4_niqgf")]
 y_sort_enabled = true
 position = Vector2(74, 496)
@@ -51,6 +246,22 @@ scale = Vector2(1.00877, 0.869533)
 offset = Vector2(0, -105)
 limit_left = 0
 limit_right = 1650
+
+[node name="waves" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wjcmq")
+offset_left = -24.0
+offset_top = 520.0
+offset_right = 1720.0
+offset_bottom = 1047.0
+script = ExtResource("12_wjcmq")
+
+[node name="waves3" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_tlhsj")
+offset_left = -32.0
+offset_top = 569.0
+offset_right = 1825.0
+offset_bottom = 817.0
+script = ExtResource("11_0r6j4")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 52.0
@@ -66,9 +277,9 @@ Boats became our only means of travel,
 forcing us to reshape our lives."
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 807.0
+offset_left = 1152.0
 offset_top = 334.0
-offset_right = 1281.0
+offset_right = 1626.0
 offset_bottom = 463.0
 theme_override_constants/line_spacing = 30
 theme_override_fonts/font = ExtResource("5_3hk0k")
@@ -80,10 +291,10 @@ How did it come to this?"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("6_wjcmq")]
-offset_left = 392.0
-offset_top = 206.0
-offset_right = 392.0
-offset_bottom = 206.0
+offset_left = 409.0
+offset_top = 164.0
+offset_right = 409.0
+offset_bottom = 164.0
 
 [node name="Cloud" parent="." instance=ExtResource("7_r3hp6")]
 cloud_count = 10
@@ -96,6 +307,13 @@ cloud_count = 10
 position = Vector2(-10, 395)
 shape = SubResource("RectangleShape2D_0r6j4")
 
+[node name="ColorRect" type="ColorRect" parent="Entrance"]
+material = SubResource("ShaderMaterial_fx521")
+offset_left = -357.0
+offset_top = -4.0
+offset_right = 277.0
+offset_bottom = 800.0
+
 [node name="Exit" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Exit"]
@@ -103,6 +321,13 @@ shape = SubResource("RectangleShape2D_0r6j4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D"]
 position = Vector2(1683.63, 395)
 shape = SubResource("RectangleShape2D_0r6j4")
+
+[node name="ColorRect" type="ColorRect" parent="Exit"]
+material = SubResource("ShaderMaterial_bctgt")
+offset_left = 1361.0
+offset_top = -4.0
+offset_right = 1995.0
+offset_bottom = 800.0
 
 [connection signal="body_entered" from="Entrance/Area2D" to="." method="_on_entrance_2d_body_entered"]
 [connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_2d_body_entered"]
