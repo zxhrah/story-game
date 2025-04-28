@@ -80,6 +80,9 @@ func _on_submit_name_button_pressed() -> void:
 		# If no name entered, ask again
 		question_board.text = "Please enter your name before continuing!"
 	else:
+		# Save to Global so leaderboard can use it
+		Global.player_name = player_name
+		
 		# Hide name input elements
 		player_name_input.visible = false
 		submit_name_button.visible = false
@@ -124,6 +127,7 @@ func begin_quiz():
 	
 	current_question_index = 0
 	score = 0
+	Global.score = 0  # <-- reset here too
 	quiz_active = true
 	
 	show_question()
@@ -149,7 +153,8 @@ func check_answer(selected_option: String):
 	var correct_answer = quiz_questions[current_question_index]["correct"]
 	
 	if selected_option == correct_answer:
-		score += 1
+		score += 1          # <-- update local score
+		Global.score = score  # <-- sync Global score too
 		# Optional: flash green or sound effect here!
 	
 	current_question_index += 1
@@ -164,4 +169,4 @@ func end_quiz():
 	
 	question_board.text = "Quiz Over!\nYou scored " + str(score) + " out of " + str(quiz_questions.size()) + "!"
 	
-	# Leaderboard stuff will happen after this
+	await Leaderboards.post_guest_score("testinggame-quiz-5tNI", Global.score, Global.player_name)

@@ -18,4 +18,4 @@ func _on_entrance_2d_body_entered(body: Node2D) -> void:
 
 func _on_exit_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		SceneTransition.change_scene("res://scenes/gallery.tscn")
+		SceneTransition.change_scene("res://scenes/quiz.tscn")
