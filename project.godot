@@ -20,6 +20,17 @@ config/icon="res://icon.svg"
 SceneTransition="*res://scenes/transitions/scene_transition.tscn"
 TransitionHandler="*res://scenes/transitions/transitionHandler.gd"
 Player="*res://scenes/sprites/player.tscn"
+Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
+PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
+Global="*res://Global.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
+
+[quiver]
+
+general/auth_token="BuQ5PLNHRrvGzPnERcFXftezYRSUUVljcs6fgWjg"
 
 [rendering]
 

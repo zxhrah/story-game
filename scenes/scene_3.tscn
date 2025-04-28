@@ -27,33 +27,33 @@
 [ext_resource type="AudioStream" uid="uid://bu3jepckcgjrf" path="res://assets/sounds/soundEffects/cows_mooing_mono_4824-100996-[AudioTrimmer.com].mp3" id="19_6wdc2"]
 [ext_resource type="AudioStream" uid="uid://b0fbdkhbqeoo2" path="res://assets/sounds/soundEffects/flowing-water.mp3" id="25_tu0qc"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uagnf"]
-texture = ExtResource("9_wsd5d")
-0:0/size_in_atlas = Vector2i(13, 13)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_tu0qc"]
-sources/0 = SubResource("TileSetAtlasSource_uagnf")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6wdc2"]
 texture = ExtResource("9_wsd5d")
 0:0/size_in_atlas = Vector2i(13, 13)
 0:0/0 = 0
 
+[sub_resource type="TileSet" id="TileSet_tu0qc"]
+sources/0 = SubResource("TileSetAtlasSource_6wdc2")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpi6e"]
-texture = ExtResource("10_cuwey")
+texture = ExtResource("9_wsd5d")
 0:0/size_in_atlas = Vector2i(13, 13)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5s0f"]
+texture = ExtResource("10_cuwey")
+0:0/size_in_atlas = Vector2i(13, 13)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_83ulv"]
 texture = ExtResource("11_yw7mx")
 0:0/size_in_atlas = Vector2i(15, 15)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_83ulv"]
-sources/0 = SubResource("TileSetAtlasSource_6wdc2")
-sources/3 = SubResource("TileSetAtlasSource_lpi6e")
-sources/4 = SubResource("TileSetAtlasSource_v5s0f")
+sources/0 = SubResource("TileSetAtlasSource_lpi6e")
+sources/3 = SubResource("TileSetAtlasSource_v5s0f")
+sources/4 = SubResource("TileSetAtlasSource_83ulv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfsoa"]
 texture = ExtResource("12_t5e5o")
@@ -81,25 +81,25 @@ sources/1 = SubResource("TileSetAtlasSource_v2r7w")
 sources/2 = SubResource("TileSetAtlasSource_f8y4a")
 sources/3 = SubResource("TileSetAtlasSource_cmewa")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22rrb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r1nib"]
 texture = ExtResource("9_wsd5d")
 0:0/size_in_atlas = Vector2i(13, 13)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07ijg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22rrb"]
 texture = ExtResource("15_pwx8t")
 0:0/size_in_atlas = Vector2i(15, 15)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qvjpb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07ijg"]
 texture = ExtResource("16_7drqf")
 0:0/size_in_atlas = Vector2i(15, 15)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8j55m"]
-sources/0 = SubResource("TileSetAtlasSource_22rrb")
-sources/1 = SubResource("TileSetAtlasSource_07ijg")
-sources/2 = SubResource("TileSetAtlasSource_qvjpb")
+sources/0 = SubResource("TileSetAtlasSource_r1nib")
+sources/1 = SubResource("TileSetAtlasSource_22rrb")
+sources/2 = SubResource("TileSetAtlasSource_07ijg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rqdi"]
 size = Vector2(79.25, 818)

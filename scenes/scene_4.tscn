@@ -199,26 +199,27 @@ scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_hyci5")
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(1, 0.998539)
 format = 2
 
 [node name="tinyBushes" type="TileMapLayer" parent="TileMap"]
 scale = Vector2(0.24, 0.24)
-tile_map_data = PackedByteArray("AABTAYIAAAAAAAAAAAB0AYAAAAAAAAAAAACUAYAAAAAAAAAAAABEAIIAAAAAAAAAAABmAIIAAAAAAAAAAAANAIIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AABTAYIAAAAAAAAAAAB0AYAAAAAAAAAAAACUAYAAAAAAAAAAAABEAIIAAAAAAAAAAABmAIIAAAAAAAAAAAANAIIAAAAAAAAAAAAPAX8AAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_2rkue")
 
 [node name="mediumTrees" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AABLABkAAwAAAAAAAAAOABkAAwAAAAAAAAApABkABAAAAAAAAABiABkABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAApABkABAAAAAAAAABiABkABAAAAAAAAAAdABwAAAAAAAAAAABAABsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_mqn5i")
 
 [node name="smallTrees" type="TileMapLayer" parent="TileMap"]
 scale = Vector2(0.439999, 0.439999)
-tile_map_data = PackedByteArray("AAA6AEEAAAAAAAAAAADHAEEAAAAAAAAAABAEAEEAAQAAAAAAAAAnAEMAAgAAAAAAAAAuAEUAAwAAAAAAAACdAEQAAwAAAAAAAAAPAEUAAwAAAAAAAACKAEEAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAA6AEEAAAAAAAAAAADHAEEAAAAAAAAAABAEAEEAAQAAAAAAAAAnAEMAAgAAAAAAAAAuAEUAAwAAAAAAAACdAEQAAwAAAAAAAAAPAEUAAwAAAAAAAACKAEEAAAAAAAAAAACDAEQAAwAAAAAAAACMAEQAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_3n6a6")
 
 [node name="bigTrees" type="TileMapLayer" parent="TileMap"]
 position = Vector2(-325, -269)
 scale = Vector2(1.52, 1.52)
-tile_map_data = PackedByteArray("AAATABkAAgAAAAAAAABEABkAAQAAAAAAAABUABkAAQAAAAAAAAAuABwAAAAAAAAAAAAkABwAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AABUABkAAQAAAAAAAABFABkAAgAAAAAAAAAUABkAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_43s5t")
 
 [node name="waterLevel" type="ColorRect" parent="."]
@@ -288,14 +289,6 @@ text = "As I floated past half-submerged homes I wondered,
 
 How did it come to this?"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("6_wjcmq")]
-offset_left = 409.0
-offset_top = 164.0
-offset_right = 409.0
-offset_bottom = 164.0
-
 [node name="Cloud" parent="." instance=ExtResource("7_r3hp6")]
 cloud_count = 10
 
@@ -328,6 +321,15 @@ offset_left = 1361.0
 offset_top = -4.0
 offset_right = 1995.0
 offset_bottom = 800.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("6_wjcmq")]
+offset_left = 392.0
+offset_top = 206.0
+offset_right = 392.0
+offset_bottom = 206.0
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Entrance/Area2D" to="." method="_on_entrance_2d_body_entered"]
 [connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_2d_body_entered"]

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var footstep_audio = $footstepSFX
+@onready var rowing_audio = $rowingSFX
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var boat = $Boat
 @onready var boat_left = $Boat/BoatLeft
@@ -46,15 +47,24 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("idle")
 
-	# Footstep Audio
-	if not in_scene_4:
+	# --- Audio handling ---
+	if in_scene_4:
+		if direction != 0:
+			if not rowing_audio.playing:
+				rowing_audio.play()
+		else:
+			rowing_audio.stop()
+		# Always stop footstep sounds in scene 4
+		footstep_audio.stop()
+	else:
+		# Only play footstep audio outside scene 4
 		if direction != 0:
 			if not footstep_audio.playing:
 				footstep_audio.play()
 		else:
 			footstep_audio.stop()
-	else:
-		footstep_audio.stop()
+		# Always stop rowing sounds outside scene 4
+		rowing_audio.stop()
 
 	# Boat Image Toggle
 	if in_scene_4:
