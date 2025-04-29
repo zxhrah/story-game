@@ -72,33 +72,62 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ut1y")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.304646, 0.4289, 0.491187, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.213995, 0.311932, 0.360864, 1)
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = 23.0
+offset_left = -118.5
+offset_top = 31.0
+offset_right = 118.5
+offset_bottom = 77.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_r8lcr")
+theme_override_font_sizes/font_size = 50
 text = "Leaderboard"
+horizontal_alignment = 1
 
 [node name="ScoresList" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 55.0
-offset_right = 40.0
-offset_bottom = 95.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 111.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ScoreEntryTemplate" type="Label" parent="ScoresList"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r8lcr")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="backButton" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 526.0
-offset_top = 504.0
+offset_top = 563.0
 offset_right = 656.0
-offset_bottom = 563.0
+offset_bottom = 622.0
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0, 0, 0.258824, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0.258824, 1)
@@ -109,4 +138,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_g6ipy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fagkd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qhkl8")
 action_mode = 0
-text = "Start Quiz!"
+text = "close"
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

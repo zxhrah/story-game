@@ -1,13 +1,30 @@
-[gd_scene load_steps=15 format=3 uid="uid://brvyvpi3ib3lm"]
+[gd_scene load_steps=21 format=3 uid="uid://brvyvpi3ib3lm"]
 
 [ext_resource type="Texture2D" uid="uid://bj126lredc2an" path="res://assets/backgrounds/galleryImage.png" id="1_lg6hf"]
 [ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="2_6rhrw"]
+[ext_resource type="Texture2D" uid="uid://b2dphgd5tyyx1" path="res://assets/backgrounds/artwork.png" id="2_u7mkv"]
 [ext_resource type="Script" uid="uid://catxxo878j7na" path="res://scenes/scene_controller.gd" id="3_8naax"]
 [ext_resource type="AudioStream" uid="uid://3ca3x3mb1rnx" path="res://assets/sounds/soundEffects/walking.mp3" id="3_r0fv4"]
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="4_543d2"]
 [ext_resource type="FontFile" uid="uid://bipivipms5d56" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_mdy1u"]
 [ext_resource type="AudioStream" uid="uid://b8bhb6sycm6o2" path="res://assets/sounds/backgroundMusic/sunset-cafe-jazz-238475.mp3" id="6_dsqju"]
 [ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="7_mkcid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7mkv"]
+bg_color = Color(0.623529, 0.388235, 0.129412, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7mkv"]
+texture = ExtResource("2_u7mkv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgpkw"]
+texture = ExtResource("2_u7mkv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdfcg"]
+texture = ExtResource("2_u7mkv")
+modulate_color = Color(0.791999, 0.791999, 0.791999, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtg1g"]
+texture = ExtResource("2_u7mkv")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_543d2"]
 bg_color = Color(1, 1, 1, 1)
@@ -98,12 +115,26 @@ grow_vertical = 2
 scale = Vector2(0.56, 0.56)
 texture = ExtResource("1_lg6hf")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 53.0
+offset_right = 814.0
+offset_bottom = 345.0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_u7mkv")
+disabled = true
+
 [node name="artButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 398.0
-offset_top = 106.0
-offset_right = 784.0
-offset_bottom = 347.0
+offset_left = 374.0
+offset_top = 65.0
+offset_right = 803.0
+offset_bottom = 333.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_u7mkv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fgpkw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fdfcg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mtg1g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fgpkw")
 
 [node name="player" parent="." instance=ExtResource("2_6rhrw")]
 position = Vector2(-65, 487)

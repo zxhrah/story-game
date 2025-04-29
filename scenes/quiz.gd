@@ -4,10 +4,14 @@ extends Control
 @onready var player_name_input = $playerNameInput
 @onready var submit_name_button = $submitNameButton
 @onready var start_quiz_button = $startQuizButton
+@onready var view_leaderboard_button = $leaderboardButton
+@onready var leaderboard = $Leaderboard
 @onready var option_a = $optionA
 @onready var option_b = $optionB
 @onready var option_c = $optionC
 @onready var option_d = $optionD
+
+var leaderboard_instance: Control = null
 
 var quiz_questions = []
 var current_question_index = 0
@@ -169,4 +173,14 @@ func end_quiz():
 	
 	question_board.text = "Quiz Over!\nYou scored " + str(score) + " out of " + str(quiz_questions.size()) + "!"
 	
-	await Leaderboards.post_guest_score("testinggame-quiz-5tNI", Global.score, Global.player_name)
+	await Leaderboards.post_guest_score("testinggame-quiz-5tNI", Global.score, Global.player_name) #posts score online
+	view_leaderboard_button.visible = true
+
+func _on_leaderboard_button_pressed() -> void:
+	leaderboard.visible = true
+	leaderboard.update_leaderboard()
+	view_leaderboard_button.visible = false
+
+
+func _on_backto_gallery_pressed() -> void:
+	SceneTransition.change_scene("res://scenes/gallery.tscn")
