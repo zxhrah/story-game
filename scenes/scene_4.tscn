@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bpu2ekad0lsbs"]
+[gd_scene load_steps=47 format=4 uid="uid://bpu2ekad0lsbs"]
 
 [ext_resource type="Script" uid="uid://ck44v6b4qpbyp" path="res://scenes/scene_4.gd" id="1_hyci5"]
 [ext_resource type="Texture2D" uid="uid://bgfoq8v5kgbgo" path="res://assets/backgrounds/sky.png" id="2_4m5or"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bluljdsb071gx" path="res://assets/objects/trees/trees2.png" id="12_8ckvf"]
 [ext_resource type="Script" uid="uid://ia2m1rjvwb3t" path="res://scenes/extras/wave.gd" id="12_wjcmq"]
 [ext_resource type="Shader" uid="uid://qhctg8g7hlqv" path="res://scenes/extras/glowingRect.gdshader" id="15_tlhsj"]
+[ext_resource type="PackedScene" uid="uid://cxcddl3i117ge" path="res://scenes/extras/floating_houses.tscn" id="18_0xq8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2s7x"]
 texture = ExtResource("5_sv37r")
@@ -255,6 +256,10 @@ offset_top = 520.0
 offset_right = 1720.0
 offset_bottom = 1047.0
 script = ExtResource("12_wjcmq")
+
+[node name="FloatingHouses" parent="." instance=ExtResource("18_0xq8t")]
+position = Vector2(0, 345)
+x_spawn = 2000.0
 
 [node name="waves3" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_tlhsj")
