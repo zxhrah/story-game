@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://qxx128vk0vhm"]
+
+[ext_resource type="Script" uid="uid://u2te2mpbcrk4" path="res://scenes/extras/canvas_layer.gd" id="1_14wbd"]
+[ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="1_psm0t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14wbd"]
+bg_color = Color(0.169891, 0.219057, 0.316653, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psm0t"]
+bg_color = Color(0.823529, 0.913725, 0.945098, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.227451, 0.258824, 0.435294, 0)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.658824, 0.658824, 0.658824, 0)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlt4i"]
+bg_color = Color(0.825489, 0.913278, 0.943418, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.228076, 0.258089, 0.434836, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.65834, 0.65834, 0.65834, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcgxy"]
+bg_color = Color(0.503296, 0.643798, 0.659802, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.228076, 0.258089, 0.434836, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.65834, 0.65834, 0.65834, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvbl"]
+bg_color = Color(0.825489, 0.913278, 0.943418, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.228076, 0.258089, 0.434836, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.65834, 0.65834, 0.65834, 0.6)
+shadow_size = 5
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_14wbd")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -280.0
+offset_right = 271.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_psm0t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxFlat_14wbd")
+disabled = true
+text = "How to play:
+
+1. Begin each story by pressing the paintings and meeting your character
+
+2. Navigate through the scene using the arrow keys
+
+3. Travel through scenes using the glowing portals
+
+4. Once you reach the end complete the quiz to earn a rank on the leaderboard
+
+5. Replay as many times as you want!
+"
+autowrap_mode = 2
+
+[node name="closeButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = 249.0
+offset_right = 65.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0.258824, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0.258824, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0.258824, 1)
+theme_override_fonts/font = ExtResource("1_psm0t")
+theme_override_styles/focus = SubResource("StyleBoxFlat_psm0t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nlt4i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hcgxy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvbl")
+action_mode = 0
+text = "close"
+
+[connection signal="pressed" from="closeButton" to="." method="_on_close_button_pressed"]

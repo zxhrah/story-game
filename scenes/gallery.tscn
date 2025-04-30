@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://brvyvpi3ib3lm"]
+[gd_scene load_steps=22 format=3 uid="uid://brvyvpi3ib3lm"]
 
 [ext_resource type="Texture2D" uid="uid://bj126lredc2an" path="res://assets/backgrounds/galleryImage.png" id="1_lg6hf"]
 [ext_resource type="PackedScene" uid="uid://cfmcelubuiv0b" path="res://scenes/sprites/player.tscn" id="2_6rhrw"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bipivipms5d56" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="4_mdy1u"]
 [ext_resource type="AudioStream" uid="uid://b8bhb6sycm6o2" path="res://assets/sounds/backgroundMusic/sunset-cafe-jazz-238475.mp3" id="6_dsqju"]
 [ext_resource type="PackedScene" uid="uid://c4b5fx6d3uvol" path="res://scenes/menus/options_menu.tscn" id="7_mkcid"]
+[ext_resource type="PackedScene" uid="uid://0dgk5parxhih" path="res://scenes/menus/leaderboard.tscn" id="10_fdfcg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7mkv"]
 bg_color = Color(0.623529, 0.388235, 0.129412, 1)
@@ -210,6 +211,28 @@ bus = &"Music"
 [node name="OptionsMenu" parent="." instance=ExtResource("7_mkcid")]
 layout_mode = 1
 
+[node name="leaderboardButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -551.0
+offset_top = 257.0
+offset_right = -507.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_543d2")
+theme_override_font_sizes/font_size = 20
+text = "🏆"
+
+[node name="Leaderboard" parent="." instance=ExtResource("10_fdfcg")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="artButton" to="SceneController" method="_on_art_button_pressed"]
 [connection signal="pressed" from="UI/Choices/Choice1" to="SceneController" method="_on_choice_1_pressed"]
 [connection signal="pressed" from="UI/Choices/Choice2" to="SceneController" method="_on_choice_2_pressed"]
+[connection signal="pressed" from="leaderboardButton" to="SceneController" method="_on_leaderboard_button_pressed"]

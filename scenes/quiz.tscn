@@ -416,6 +416,7 @@ text = "View Leaderboard"
 
 [node name="BacktoGallery" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 484.0
 offset_top = 511.0
 offset_right = 685.0

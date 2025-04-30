@@ -6,6 +6,8 @@ extends Node
 @onready var choices = $"../UI/Choices"
 @onready var choice1_button = $"../UI/Choices/Choice1"
 @onready var choice2_button = $"../UI/Choices/Choice2"
+@onready var view_leaderboard_button = $"../leaderboardButton"
+@onready var leaderboard = $"../Leaderboard"
 var has_pressed_art_before = false
 
 
@@ -103,3 +105,9 @@ func _on_choice_2_pressed():
 	
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_leaderboard_button_pressed() -> void:
+	leaderboard.visible = true
+	leaderboard.update_leaderboard()
+	view_leaderboard_button.visible = false

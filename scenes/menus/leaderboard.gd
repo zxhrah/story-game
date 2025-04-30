@@ -14,7 +14,8 @@ func display_scores(scores: Array) -> void:
 			child.queue_free()
 
 	# Sort scores in descending order (optional - API may return already sorted)
-	scores.sort_custom(_sort_by_score_desc)
+	scores.sort_custom(func(a, b): return int(a.get("score", 0)) > int(b.get("score", 0)))
+
 
 	# Add each score with rank
 	for i in range(scores.size()):
