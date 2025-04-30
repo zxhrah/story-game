@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0ok63awdq7xq"]
+[gd_scene load_steps=10 format=3 uid="uid://d0ok63awdq7xq"]
 
 [ext_resource type="Texture2D" uid="uid://dlwyptiuoufwn" path="res://assets/other/Climate-removebg-preview.png" id="1_25jh2"]
 [ext_resource type="Script" uid="uid://c6fkllannx3j8" path="res://scenes/welcome.gd" id="1_b1rs5"]
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="2_b1rs5"]
 [ext_resource type="PackedScene" uid="uid://qxx128vk0vhm" path="res://scenes/extras/canvas_layer.tscn" id="4_wm3rh"]
+[ext_resource type="AudioStream" uid="uid://dg0ep4mfcpir8" path="res://assets/sounds/backgroundMusic/soft-synth-music-242044.mp3" id="5_1k3ta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm3rh"]
 bg_color = Color(0.823529, 0.913725, 0.945098, 0)
@@ -83,10 +84,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.169891, 0.219057, 0.316653, 1)
 
-[node name="logo" type="Sprite2D" parent="."]
-position = Vector2(577, 218)
-scale = Vector2(0.66, 0.66)
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -252.0
+offset_right = 313.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.719571, 0.719571)
 texture = ExtResource("1_25jh2")
+stretch_mode = 3
 
 [node name="start" type="Button" parent="."]
 layout_mode = 1
@@ -96,9 +109,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -82.0
-offset_top = 72.0
+offset_top = 112.0
 offset_right = 83.0
-offset_bottom = 131.0
+offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -122,9 +135,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -82.0
-offset_top = 152.0
+offset_top = 192.0
 offset_right = 12.0
-offset_bottom = 211.0
+offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -148,9 +161,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 22.0
-offset_top = 153.0
+offset_top = 193.0
 offset_right = 83.0
-offset_bottom = 212.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -168,6 +181,11 @@ text = "i"
 
 [node name="information" parent="." instance=ExtResource("4_wm3rh")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1k3ta")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
