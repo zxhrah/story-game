@@ -41,3 +41,4 @@ func update_leaderboard() -> void:
 func _on_back_button_pressed() -> void:
 	visible = false
 	get_parent().get_node("leaderboardButton").visible = true
+	

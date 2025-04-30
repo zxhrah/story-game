@@ -13,6 +13,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7mkv"]
 bg_color = Color(0.623529, 0.388235, 0.129412, 1)
+shadow_color = Color(0.473976, 0.473976, 0.473976, 0.6)
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7mkv"]
 texture = ExtResource("2_u7mkv")

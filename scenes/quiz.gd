@@ -6,6 +6,7 @@ extends Control
 @onready var start_quiz_button = $startQuizButton
 @onready var view_leaderboard_button = $leaderboardButton
 @onready var leaderboard = $Leaderboard
+@onready var gallery = $BacktoGallery
 @onready var option_a = $optionA
 @onready var option_b = $optionB
 @onready var option_c = $optionC
@@ -21,7 +22,7 @@ var quiz_active = false
 var welcome_messages = [
 	"Welcome to the Quiz!",
 	"It's time to test your memory.",
-	"You have 10 seconds on each question.",
+	"You must submit an answer for each question.",
 	"Your total score will be displayed at the end.",
 	"Are you ready?"
 ]
@@ -103,29 +104,29 @@ func begin_quiz():
 	# Set up questions
 	quiz_questions = [
 		{
-			"question": "What color was the boat in Scene 4?",
-			"options": ["Red", "Blue", "Green", "Yellow"],
+			"question": "What happened to the weather that caused the roads to be covered with water?",
+			"options": ["Overflowing fish pond", "Heavy downpour", "Flooded river", "Sinking ground"],
 			"correct": "B"
 		},
 		{
-			"question": "How many seconds do you get for each quiz question?",
-			"options": ["5", "10", "15", "20"],
-			"correct": "B"
+			"question": "What overflowed causing villagers to cast nets everywhere?",
+			"options": ["Fish Pond", "The streets", "Roads", "Rivers"],
+			"correct": "A"
 		},
 		{
-			"question": "Which direction did the boat face when moving left?",
-			"options": ["North", "South", "East", "West"],
+			"question": "What else was affected by these floods?",
+			"options": ["The animals", "The fields", "The People", "All of the Above"],
 			"correct": "D"
 		},
 		{
-			"question": "What type of node is the boat in Scene 4?",
-			"options": ["Sprite2D", "Node2D", "CharacterBody2D", "Control"],
-			"correct": "B"
+			"question": "The floods caused power cuts where there was electricity, and swallowed the roads. How do the residents get around?",
+			"options": ["Cars", "Swimming", "Boats", "Walking"],
+			"correct": "C"
 		},
 		{
-			"question": "What input triggers right movement?",
-			"options": ["ui_left", "ui_right", "ui_up", "ui_down"],
-			"correct": "B"
+			"question": "What country is Moulvibazar in?",
+			"options": ["Bulgaria", "Beirut", "Bangladesh", "India"],
+			"correct": "C"
 		}
 	]
 	
@@ -175,11 +176,14 @@ func end_quiz():
 	
 	await Leaderboards.post_guest_score("testinggame-quiz-5tNI", Global.score, Global.player_name) #posts score online
 	view_leaderboard_button.visible = true
+	gallery.visible = true
 
 func _on_leaderboard_button_pressed() -> void:
 	leaderboard.visible = true
 	leaderboard.update_leaderboard()
 	view_leaderboard_button.visible = false
+	if view_leaderboard_button.visible:
+		gallery.visible = false
 
 
 func _on_backto_gallery_pressed() -> void:
