@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d0ok63awdq7xq"]
 
-[ext_resource type="Texture2D" uid="uid://dlwyptiuoufwn" path="res://assets/other/Climate-removebg-preview.png" id="1_25jh2"]
 [ext_resource type="Script" uid="uid://c6fkllannx3j8" path="res://scenes/welcome.gd" id="1_b1rs5"]
+[ext_resource type="Texture2D" uid="uid://du4saqm42jh6b" path="res://assets/other/Climate__1_-removebg-preview.png" id="2_1k3ta"]
 [ext_resource type="FontFile" uid="uid://b3esi7yukr5pn" path="res://assets/fonts/Papernotes.ttf" id="2_b1rs5"]
 [ext_resource type="PackedScene" uid="uid://qxx128vk0vhm" path="res://scenes/extras/canvas_layer.tscn" id="4_wm3rh"]
 [ext_resource type="AudioStream" uid="uid://dg0ep4mfcpir8" path="res://assets/sounds/backgroundMusic/soft-synth-music-242044.mp3" id="5_1k3ta"]
@@ -98,7 +98,7 @@ offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.719571, 0.719571)
-texture = ExtResource("1_25jh2")
+texture = ExtResource("2_1k3ta")
 stretch_mode = 3
 
 [node name="start" type="Button" parent="."]
