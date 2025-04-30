@@ -103,14 +103,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 436.5
+offset_left = 438.0
 offset_top = 164.0
-offset_right = 480.5
-offset_bottom = 206.0
+offset_right = 496.0
+offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.71681, 0.71681)
 theme_override_fonts/font = ExtResource("3_ohqpn")
-text = "⚙️"
+icon_alignment = 1
 
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/music" to="AudioOptions" method="_on_h_slider_mouse_exited"]
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/sfxslider" to="AudioOptions" method="_on_sfxslider_mouse_exited"]
