@@ -121,7 +121,9 @@ scale = Vector2(0.56, 0.56)
 texture = ExtResource("1_lg6hf")
 
 [node name="Button" type="Button" parent="."]
+layout_direction = 1
 layout_mode = 1
+anchors_preset = -1
 offset_left = 362.0
 offset_top = 53.0
 offset_right = 814.0
@@ -130,7 +132,9 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_u7mkv")
 disabled = true
 
 [node name="artButton" type="Button" parent="."]
+layout_direction = 1
 layout_mode = 1
+anchors_preset = -1
 offset_left = 374.0
 offset_top = 65.0
 offset_right = 803.0

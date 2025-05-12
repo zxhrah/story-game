@@ -23,7 +23,7 @@ func _ready():
 	dialogue_label.visible = false
 	choices.visible = false
 
-# Function to handle the art button press event
+# Function to handle the art button press
 func _on_art_button_pressed() -> void:
 	art_button.disabled = true
 	if has_pressed_art_before:
@@ -63,7 +63,7 @@ func _on_art_button_pressed() -> void:
 
 func _on_player_arrived():
 	# Stop the walking animation and switch to idle
-	var animated_sprite = player.get_node("AnimatedSprite2D")  # Assuming AnimatedSprite is a child of player
+	var animated_sprite = player.get_node("AnimatedSprite2D")
 	var footsteps = player.get_node("footstepSFX2")
 	if animated_sprite:
 		print("Player arrived, playing idle animation")

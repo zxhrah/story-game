@@ -1,15 +1,13 @@
 extends Node2D
 
 @export var cloud_texture: Texture2D
-@export var cloud_count: int = 7  # Number of clouds (between 5–10)
+@export var cloud_count: int = 7  # Number of clouds
 @export var size_range: Vector2 = Vector2(0.1, 0.5)
 @export var speed_range: Vector2 = Vector2(20.0, 60.0)
-
-# Off-screen spawn range (to the left)
+# Spawns off screen on the left
 @export var x_range_offscreen: Vector2 = Vector2(-800, -700)
-# On-screen spawn range (so it looks like clouds are already moving)
+# On-screen spawn range - the clouds moving already
 @export var x_range_onscreen: Vector2 = Vector2(0, 1700)
-
 @export var y_range: Vector2 = Vector2(100, 250)
 @export var x_reset_position: float = -200
 @export var x_end_position: float = 1900

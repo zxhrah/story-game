@@ -47,7 +47,7 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("idle")
 
-	# --- Audio handling ---
+	# Audio Handling
 	if in_scene_4:
 		if direction != 0:
 			if not rowing_audio.playing:

@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	if body.name == "player": # if player enters the area 2d
+		# Transition to the next scene is played
 		SceneTransition.change_scene("res://scenes/scene_2.tscn")

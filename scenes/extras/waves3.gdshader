@@ -4,7 +4,7 @@ uniform float time;
 uniform float amplitude = 5.0;
 uniform float frequency = 50.0;
 uniform float speed = 2.0;
-uniform float border_thickness = 0.009; // ~0.5px depending on resolution
+uniform float border_thickness = 0.009;
 
 void fragment() {
     vec2 uv = UV;
@@ -27,7 +27,7 @@ void fragment() {
 
     // Mix water color and border color
     vec4 water_color = vec4(0.2, 0.6, 1.0, 0.5 * wave_alpha);
-    vec4 border_color = vec4(1.0, 1.0, 1.0, border); // White
+    vec4 border_color = vec4(1.0, 1.0, 1.0, border);
 
     COLOR = mix(water_color, border_color, border);
 }

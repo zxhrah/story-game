@@ -4,7 +4,7 @@
 	uniform float amplitude = 5.0;
 	uniform float frequency = 20.0;
 	uniform float speed = 2.0;
-	uniform float border_thickness = 0.005; // ~0.5px depending on resolution
+	uniform float border_thickness = 0.005;
 
 	void fragment() {
 	    vec2 uv = UV;
@@ -14,7 +14,7 @@
 	        sin(uv.x * frequency + time * speed) +
 	        0.5 * sin(uv.x * (frequency * 0.5) + time * speed * 1.3);
 
-	    // Round out the wave a bit more
+	    // Round out the wave
 	    wave = pow(abs(wave), 1.5) * sign(wave);
 	    wave *= amplitude / 100.0;
 

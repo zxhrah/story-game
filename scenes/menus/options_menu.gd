@@ -3,8 +3,8 @@ extends Control
 @onready var save_button = $AudioOptions/Save
 @onready var vbox = $AudioOptions/VBoxContainer
 
-# Preload your icon here
-var save_icon = preload("res://assets/other/settings.png")  # <-- update path to your actual icon
+# Preload icon
+var save_icon = preload("res://assets/other/settings.png")
 
 func _ready() -> void:
 	_update_button_appearance()

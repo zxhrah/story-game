@@ -85,10 +85,10 @@ func _on_submit_name_button_pressed() -> void:
 		# If no name entered, ask again
 		question_board.text = "Please enter your name before continuing!"
 	else:
-		# Save to Global so leaderboard can use it
+		# Save to global so leaderboard can use it
 		Global.player_name = player_name
 		
-		# Hide name input elements
+		# Hide name input
 		player_name_input.visible = false
 		submit_name_button.visible = false
 		question_board.text = "Let's Start!"
@@ -132,7 +132,7 @@ func begin_quiz():
 	
 	current_question_index = 0
 	score = 0
-	Global.score = 0  # <-- reset here too
+	Global.score = 0
 	quiz_active = true
 	
 	show_question()
@@ -158,9 +158,8 @@ func check_answer(selected_option: String):
 	var correct_answer = quiz_questions[current_question_index]["correct"]
 	
 	if selected_option == correct_answer:
-		score += 1          # <-- update local score
-		Global.score = score  # <-- sync Global score too
-		# Optional: flash green or sound effect here!
+		score += 1
+		Global.score = score
 	
 	current_question_index += 1
 	show_question()
@@ -184,7 +183,6 @@ func _on_leaderboard_button_pressed() -> void:
 	view_leaderboard_button.visible = false
 	if view_leaderboard_button.visible:
 		gallery.visible = false
-
 
 func _on_backto_gallery_pressed() -> void:
 	SceneTransition.change_scene("res://scenes/gallery.tscn")
